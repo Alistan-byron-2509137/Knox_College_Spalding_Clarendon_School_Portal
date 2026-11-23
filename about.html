@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!--
+  Student:   Alistan Junior Byron
+  Student ID: 2509137
+  Programme: BSc Computing and Information Technology
+  Course:    CIT2011 - Web Programming
+  Tutor:     Miss Anuli
+  Lab:       Monday, 3:00 PM - 5:00 PM
+  Project:   Individual School Portal Assignment
+             (Knox College, Spalding, Clarendon, Jamaica)
+  FILE: about.html
+  PURPOSE: About Us page. Static school information plus a teacher directory that is read from localStorage.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="History, academics, student life, achievements, facilities, admissions and teachers of Knox College, Spalding, Clarendon.">
+  <title>About Knox College | Knox College School Portal</title>
+  <link rel="icon" href="Assets/KnoxCollege_Spalding_Clarendon_logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="CSS/KnoxCollege_Spalding_Clarendon_styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header no-print">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="Assets/KnoxCollege_Spalding_Clarendon_logo.svg" alt="Knox College portal emblem" width="44" height="51">
+        <span class="brand-name">Knox College
+          <span class="brand-sub">Spalding, Clarendon, Jamaica</span>
+        </span>
+      </a>
+      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-title">
+      <div class="container">
+        <h1>About Knox College</h1>
+        <p>History, academics, student life, facilities and the people who teach here.</p>
+      </div>
+    </div>
+
+    <section class="section" id="history" aria-labelledby="history-heading">
+      <div class="container">
+        <h2 id="history-heading">School history</h2>
+        <p>Knox College opened in 1947 in Spalding, Clarendon, on a hilltop close to the Clarendon&ndash;Manchester border. It was co-founded by Rev. Dr. Lewis Davidson and Mr. David Bent, and it is named after the Scottish reformer John Knox.</p>
+        <p>The school is part of the Knox complex of schools, which also includes the Neighbourhood Early Childhood Institute, Knox Junior School and Knox Community College. The complex is owned and administered by the United Church in Jamaica and the Cayman Islands, and each school has its own principal and board of management.</p>
+        <p>Knox College is a grant-aided, co-educational high school for day pupils and boarders. Public sources describe it as the only co-educational boarding school at the secondary level in Jamaica.</p>
+      </div>
+    </section>
+
+    <section class="section section-white" id="mission" aria-labelledby="mission-heading">
+      <div class="container">
+        <h2 id="mission-heading">Motto, mission, vision and values</h2>
+        <div class="card-grid">
+          <article class="card card-accent">
+            <h3>Motto</h3>
+            <p><em>Niti Servire Neque Cedere</em><br>To strive to serve and not to yield.</p>
+          </article>
+          <article class="card">
+            <h3>Mission</h3>
+            <p>[Official mission statement to be added. It was not found in the public sources used for this project.]</p>
+          </article>
+          <article class="card">
+            <h3>Vision</h3>
+            <p>[Official vision statement to be added.]</p>
+          </article>
+          <article class="card">
+            <h3>Core values</h3>
+            <p>[Official core values to be added. Confirm the wording with the school office.]</p>
+          </article>
+        </div>
+        <p class="source-note">These placeholders are marked on purpose. The portal does not invent official statements.</p>
+      </div>
+    </section>
+
+    <section class="section" id="academics" aria-labelledby="academics-heading">
+      <div class="container">
+        <h2 id="academics-heading">Academic information</h2>
+        <div class="two-column">
+          <div>
+            <p>Knox College teaches Grades 7 to 13. The school has up to seven streams, and it takes in about 300 students in Grade 7 each year and about 100 in Grade 13.</p>
+            <p>Work for the Caribbean Examinations Council (CXC) exams starts in Grade 9. Students sit CSEC at the end of Grade 11, and CAPE in Grades 12 and 13.</p>
+          </div>
+          <div>
+            <p>English Language, English Literature and Mathematics are compulsory. CSEC students take at least eight subjects.</p>
+            <p>A student service work programme, started in 1968, is part of the course. Students must complete at least 40 hours of it to earn the school diploma, and seniors complete at least 50 hours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="student-life" aria-labelledby="life-heading">
+      <div class="container">
+        <h2 id="life-heading">Student life and community</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Student leadership</h3>
+            <p>Students choose their council representatives, and the president and vice-president are chosen in a democratic election. Teachers select prefects for leadership, academic performance and attitude. The Head Boy and Head Girl come from the prefects.</p>
+          </article>
+          <article class="card">
+            <h3>Clubs and societies</h3>
+            <p>About thirty clubs include cadets, drama, debating, music, Junior Achievement, 4-H, Red Cross, journalism, sign language, science and technology, Spanish, and the Duke of Edinburgh Award.</p>
+          </article>
+          <article class="card">
+            <h3>Sports</h3>
+            <p>Basketball, volleyball, chess, netball, cricket, football, lawn tennis, table tennis, badminton, swimming and track and field.</p>
+          </article>
+          <article class="card">
+            <h3>Houses and colours</h3>
+            <p>The four houses are Forbes Dennis, Grant, Murray and Webster. The school colours are red, blue and white.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="achievements" aria-labelledby="achievements-heading">
+      <div class="container">
+        <h2 id="achievements-heading">Achievements</h2>
+        <ul>
+          <li>Knox College has won several ISSA basketball and volleyball championships.</li>
+          <li>The school takes part in national and regional competitions in science, Spanish, literacy, visual and performing arts, Junior Achievement and 4-H.</li>
+          <li>About 300 students were in the graduating class of 2026, according to a Jamaica Information Service report.</li>
+          <li>News reports list Rear Admiral Antonette Wemyss Gorman, Jamaica's Chief of Defence Staff, among Knox College's past students.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-white" id="facilities" aria-labelledby="facilities-heading">
+      <div class="container">
+        <h2 id="facilities-heading">Facilities and campus</h2>
+        <p>The campus covers about 100 acres in Spalding. It includes boarding dormitories, a playing field and a gymnasium.</p>
+        <p>In March 2022 the school broke ground on a J$200 million sixth-form block because more students were enrolling in the sixth-form programme. In July 2026 the Ministry of Education announced over J$319 million for rehabilitation work at the school after Hurricane Melissa.</p>
+      </div>
+    </section>
+
+    <section class="section" id="admissions" aria-labelledby="admissions-heading">
+      <div class="container">
+        <h2 id="admissions-heading">Admissions</h2>
+        <p>Knox College welcomes day pupils and boarders. Most students come from nearby districts and towns, and many come from other parishes across Jamaica.</p>
+        <p>For the current admission steps, fees and boarding places, contact the school office. The phone numbers and address are on the <a href="contact.html">Contact Us</a> page.</p>
+      </div>
+    </section>
+
+    <section class="section section-white" id="teachers" aria-labelledby="teachers-heading">
+      <div class="container">
+        <h2 id="teachers-heading">Teacher directory</h2>
+        <p>Teachers and the subjects they teach. This list is read from the portal's browser storage, so changes made by the Administrator appear here.</p>
+        <div class="table-wrap">
+          <table>
+            <caption>Teachers and subjects</caption>
+            <thead>
+              <tr><th scope="col">Teacher</th><th scope="col">Subject taught</th></tr>
+            </thead>
+            <tbody id="teacherTable"></tbody>
+          </table>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>School leadership</caption>
+            <thead>
+              <tr><th scope="col">Position</th><th scope="col">Name</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Principal</td><td>Dr. Alexander Bourne</td></tr>
+              <tr><td>Vice Principal</td><td>Mrs. Platt</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="source-note">Teacher names and subjects were supplied by the developer, a former student. Subjects without a confirmed teacher show &ldquo;To be confirmed&rdquo;.</p>
+      </div>
+    </section>
+
+    <section class="section" id="story" aria-labelledby="story-heading">
+      <div class="container">
+        <h2 id="story-heading">Why I chose Knox College</h2>
+        <div class="story">
+          <p>I spent five years at Knox College as a boarder, and it became a big part of my childhood. Living on campus made school more than classes. It was home, routine and community, and it let me get to know leaders like our Principal, Mr. Bourne, and our Vice Principal, Mrs. Platt.</p>
+          <p>I studied IT, Electrical, Mathematics, English Language, English Literature, Spanish and French. Mr. Brown taught me Mathematics, Miss Black taught English Language, Miss Williams taught English Literature, and Miss Gray taught IT.</p>
+          <p>In every class I was the youngest student, so I made a habit of giving each lesson my best. Along the way I served on a committee on the school board and was nominated for Head Boy. I came second, and I learned that trying your best and serving others matters more than any title.</p>
+          <p>The school motto, to strive to serve and not to yield, still guides me as I study Computing today.</p>
+        </div>
+        <p class="muted">&mdash; Alistan Byron, former Knox College student and developer of this portal</p>
+      </div>
+    </section>
+
+    <section class="section section-white" aria-labelledby="sources-heading">
+      <div class="container">
+        <h2 id="sources-heading">Where the information comes from</h2>
+        <p class="source-note">School facts come mainly from the public Wikipedia article on Knox College (Jamaica), the Jamaica Observer (March 2022), the Jamaica Gleaner and the Jamaica Information Service (July 2026). The school's own website was not available when this project was made, so please confirm important details with the school.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer no-print">
+    <div class="container">
+      <p><strong>Knox College School Portal</strong> &ndash; a student project for CIT2011 Web Programming, University of Technology, Jamaica.</p>
+      <p>Developed by Alistan Junior Byron (2509137), BSc Computing and Information Technology. This is not the official school website.</p>
+      <p>School facts come from public sources. The student, grade and payment records are fictional sample data.</p>
+      <p><a href="index.html">Home</a> | <a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a> | <a href="login.html">Login</a></p>
+    </div>
+  </footer>
+  <script defer src="JavaScript/KnoxCollege_Spalding_Clarendon_shared.js"></script>
+  <script defer src="JavaScript/KnoxCollege_Spalding_Clarendon_public.js"></script>
+</body>
+</html>

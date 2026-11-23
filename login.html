@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+  Student:   Alistan Junior Byron
+  Student ID: 2509137
+  Programme: BSc Computing and Information Technology
+  Course:    CIT2011 - Web Programming
+  Tutor:     Miss Anuli
+  Lab:       Monday, 3:00 PM - 5:00 PM
+  Project:   Individual School Portal Assignment
+             (Knox College, Spalding, Clarendon, Jamaica)
+  FILE: login.html
+  PURPOSE: Login page. Checks the simulated accounts stored in localStorage and sends each role to its own dashboard.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Log in to the Knox College School Portal as administrator, teacher or viewer.">
+  <title>Login | Knox College School Portal</title>
+  <link rel="icon" href="Assets/KnoxCollege_Spalding_Clarendon_logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="CSS/KnoxCollege_Spalding_Clarendon_styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header no-print">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="Assets/KnoxCollege_Spalding_Clarendon_logo.svg" alt="Knox College portal emblem" width="44" height="51">
+        <span class="brand-name">Knox College
+          <span class="brand-sub">Spalding, Clarendon, Jamaica</span>
+        </span>
+      </a>
+      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-title">
+      <div class="container">
+        <h1>Portal login</h1>
+        <p>One login page for the Administrator, Teacher and Viewer dashboards.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container login-box">
+        <div id="loginMessage" hidden></div>
+        <div id="signedInBox" class="message" hidden>
+          <span id="signedInText"></span>
+          <div class="button-row">
+            <a class="btn btn-small" id="signedInLink" href="login.html">Go to my dashboard</a>
+            <button class="btn btn-small btn-light" type="button" id="signedInLogout">Log out</button>
+          </div>
+        </div>
+
+        <form id="loginForm" class="form-card" novalidate>
+          <div class="form-grid">
+            <div class="field field-wide">
+              <label for="username">Username</label>
+              <input type="text" id="username" name="username" required autocomplete="username">
+            </div>
+            <div class="field field-wide">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" required autocomplete="current-password">
+            </div>
+          </div>
+          <button class="btn btn-red" type="submit">Log in</button>
+        </form>
+
+        <details open>
+          <summary>Sample accounts for testing</summary>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th scope="col">Role</th><th scope="col">Username</th><th scope="col">Password</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Administrator</td><td>admin</td><td>Admin@123</td></tr>
+                <tr><td>Teacher (3 subjects, for testing)</td><td>teacher</td><td>Teacher@123</td></tr>
+                <tr><td>Teacher: Mr. Brown (Mathematics)</td><td>mr.brown</td><td>Teacher@123</td></tr>
+                <tr><td>Teacher: Miss Black (English Language)</td><td>miss.black</td><td>Teacher@123</td></tr>
+                <tr><td>Teacher: Miss Williams (English Literature)</td><td>miss.williams</td><td>Teacher@123</td></tr>
+                <tr><td>Teacher: Miss Gray (Information Technology)</td><td>miss.gray</td><td>Teacher@123</td></tr>
+                <tr><td>General authorized user (read-only)</td><td>viewer</td><td>Viewer@123</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details>
+          <summary>Limits of a simulated front-end login</summary>
+          <p>This login only pretends to be secure. It is a front-end simulation made with HTML, CSS and JavaScript, with no server.</p>
+          <ul>
+            <li>The usernames and passwords are stored in the browser as plain text. Anyone can read them with the developer tools.</li>
+            <li>The dashboards check the saved role in the browser. A person who knows how to edit browser storage could change their role.</li>
+            <li>There is no password hashing, no account lockout and no secure session. The session is only a note in sessionStorage that disappears when the tab closes.</li>
+            <li>Real systems check passwords on a server, store them hashed and send data over HTTPS.</li>
+          </ul>
+        </details>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer no-print">
+    <div class="container">
+      <p><strong>Knox College School Portal</strong> &ndash; a student project for CIT2011 Web Programming, University of Technology, Jamaica.</p>
+      <p>Developed by Alistan Junior Byron (2509137), BSc Computing and Information Technology. This is not the official school website.</p>
+      <p>School facts come from public sources. The student, grade and payment records are fictional sample data.</p>
+      <p><a href="index.html">Home</a> | <a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a> | <a href="login.html">Login</a></p>
+    </div>
+  </footer>
+  <script defer src="JavaScript/KnoxCollege_Spalding_Clarendon_shared.js"></script>
+  <script defer src="JavaScript/KnoxCollege_Spalding_Clarendon_login.js"></script>
+</body>
+</html>

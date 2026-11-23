@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--
+  Student:   Alistan Junior Byron
+  Student ID: 2509137
+  Programme: BSc Computing and Information Technology
+  Course:    CIT2011 - Web Programming
+  Tutor:     Miss Anuli
+  Lab:       Monday, 3:00 PM - 5:00 PM
+  Project:   Individual School Portal Assignment
+             (Knox College, Spalding, Clarendon, Jamaica)
+  FILE: contact.html
+  PURPOSE: Contact page. Shows school contact details and a message form that uses HTML5 validation (required, pattern, minlength) and saves to localStorage.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact details and message form for Knox College, Spalding, Clarendon.">
+  <title>Contact Us | Knox College School Portal</title>
+  <link rel="icon" href="Assets/KnoxCollege_Spalding_Clarendon_logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="CSS/KnoxCollege_Spalding_Clarendon_styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header no-print">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="Assets/KnoxCollege_Spalding_Clarendon_logo.svg" alt="Knox College portal emblem" width="44" height="51">
+        <span class="brand-name">Knox College
+          <span class="brand-sub">Spalding, Clarendon, Jamaica</span>
+        </span>
+      </a>
+      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-title">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>Reach the school office or send a message through the portal.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container two-column">
+        <div>
+          <h2>School contact details</h2>
+          <address>
+            <p><strong>Knox College</strong><br>
+            P.O. Box 1735<br>
+            Spalding, Clarendon<br>
+            Jamaica, W.I.</p>
+            <p>School office: <a href="tel:+18769878015">876-987-8015</a><br>
+            Bursar&rsquo;s Office: <a href="tel:+18769640902">876-964-0902</a> or <a href="tel:+18769878045">876-987-8045</a></p>
+            <p>Website address: knoxcollege.edu.jm</p>
+          </address>
+          <p class="source-note">These details come from a public school listing. Please confirm them with the school before you rely on them. An official email address was not found.</p>
+          <iframe class="map-frame" title="Map showing Knox College in Spalding, Clarendon" loading="lazy"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-77.4663858%2C18.144663%2C-77.4423858%2C18.158663&amp;layer=mapnik&amp;marker=18.151663%2C-77.4543858"></iframe>
+          <p><a href="https://www.openstreetmap.org/?mlat=18.151663&amp;mlon=-77.4543858#map=16/18.151663/-77.4543858">View a larger map</a></p>
+        </div>
+
+        <div>
+          <h2>Send a message</h2>
+          <p class="muted">Your message is saved in this browser so the Administrator can read it on the dashboard. It is not sent over the internet.</p>
+          <div id="contactMessage" hidden></div>
+          <form id="contactForm" class="form-card" novalidate>
+            <div class="form-grid">
+              <div class="field field-wide">
+                <label for="contactName">Full name</label>
+                <input type="text" id="contactName" name="contactName" required
+                  pattern="[A-Za-z][A-Za-z .'\-]{1,39}"
+                  title="Use 2 to 40 letters. Spaces, full stops, apostrophes and hyphens are allowed."
+                  autocomplete="name">
+              </div>
+              <div class="field field-wide">
+                <label for="contactEmail">Email address</label>
+                <input type="email" id="contactEmail" name="contactEmail" required
+                  pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
+                  title="Enter an email address such as name@example.com"
+                  autocomplete="email">
+              </div>
+              <div class="field field-wide">
+                <label for="contactPhone">Phone number <span class="hint">(optional)</span></label>
+                <input type="tel" id="contactPhone" name="contactPhone"
+                  pattern="(\+?1[\- ]?)?\(?[0-9]{3}\)?[\- ]?[0-9]{3}[\- ]?[0-9]{4}"
+                  title="Use a 10-digit number such as 876-555-0123"
+                  autocomplete="tel">
+                <span class="hint">Example: 876-555-0123</span>
+              </div>
+              <div class="field field-wide">
+                <label for="contactSubject">Subject</label>
+                <select id="contactSubject" name="contactSubject" required>
+                  <option value="">Choose a subject</option>
+                  <option>Admissions enquiry</option>
+                  <option>Tuition and payments</option>
+                  <option>Academic records</option>
+                  <option>General question</option>
+                  <option>Feedback on this portal</option>
+                </select>
+              </div>
+              <div class="field field-wide">
+                <label for="contactText">Message</label>
+                <textarea id="contactText" name="contactText" required minlength="10" maxlength="500"
+                  title="Write between 10 and 500 characters."></textarea>
+                <span class="hint" id="charCount">0 / 500 characters</span>
+              </div>
+              <div class="field field-wide">
+                <label class="inline-field" for="contactConsent">
+                  <input type="checkbox" id="contactConsent" name="contactConsent" required>
+                  I agree that my message may be saved in this browser.
+                </label>
+              </div>
+            </div>
+            <div class="button-row">
+              <button class="btn btn-red" type="submit">Send message</button>
+              <button class="btn btn-light" type="reset" id="contactReset">Clear form</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer no-print">
+    <div class="container">
+      <p><strong>Knox College School Portal</strong> &ndash; a student project for CIT2011 Web Programming, University of Technology, Jamaica.</p>
+      <p>Developed by Alistan Junior Byron (2509137), BSc Computing and Information Technology. This is not the official school website.</p>
+      <p>School facts come from public sources. The student, grade and payment records are fictional sample data.</p>
+      <p><a href="index.html">Home</a> | <a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a> | <a href="login.html">Login</a></p>
+    </div>
+  </footer>
+  <script defer src="JavaScript/KnoxCollege_Spalding_Clarendon_shared.js"></script>
+  <script defer src="JavaScript/KnoxCollege_Spalding_Clarendon_public.js"></script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!--
+  Student:   Alistan Junior Byron
+  Student ID: 2509137
+  Programme: BSc Computing and Information Technology
+  Course:    CIT2011 - Web Programming
+  Tutor:     Miss Anuli
+  Lab:       Monday, 3:00 PM - 5:00 PM
+  Project:   Individual School Portal Assignment
+             (Knox College, Spalding, Clarendon, Jamaica)
+  FILE: admin-dashboard.html
+  PURPOSE: Administrator dashboard. Student CRUD, classes, subjects, grades, tuition ledger, payments, announcements and messages.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Administrator dashboard for the Knox College School Portal.">
+  <title>Administrator Dashboard | Knox College School Portal</title>
+  <link rel="icon" href="Assets/KnoxCollege_Spalding_Clarendon_logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="CSS/KnoxCollege_Spalding_Clarendon_styles.css">
+</head>
+<body class="guard">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header no-print">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="Assets/KnoxCollege_Spalding_Clarendon_logo.svg" alt="Knox College portal emblem" width="44" height="51">
+        <span class="brand-name">Knox College
+          <span class="brand-sub">Spalding, Clarendon, Jamaica</span>
+        </span>
+      </a>
+      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="dashboard">
+      <aside class="sidebar no-print" aria-label="Administrator menu">
+        <h2>Administrator</h2>
+        <p id="welcomeText">Signed in</p>
+        <button type="button" data-section="overview">Overview</button>
+        <button type="button" data-section="students">Students</button>
+        <button type="button" data-section="classes">Classes and subjects</button>
+        <button type="button" data-section="grades">Grades</button>
+        <button type="button" data-section="finance">Tuition and payments</button>
+        <button type="button" data-section="announcements">Announcements</button>
+        <button type="button" data-section="messages">Messages</button>
+      </aside>
+
+      <div class="content">
+
+        <!-- ===== OVERVIEW ===== -->
+        <section class="panel-section" id="section-overview" aria-labelledby="overview-heading">
+          <div class="panel-heading"><h1 id="overview-heading">Overview</h1></div>
+          <div class="stat-cards">
+            <div class="stat-card"><span class="stat-number" id="statStudents">0</span><span class="stat-label">Students</span></div>
+            <div class="stat-card"><span class="stat-number" id="statBilled">J$0.00</span><span class="stat-label">Tuition billed</span></div>
+            <div class="stat-card stat-green"><span class="stat-number" id="statCollected">J$0.00</span><span class="stat-label">Tuition collected</span></div>
+            <div class="stat-card stat-red"><span class="stat-number" id="statBalance">J$0.00</span><span class="stat-label">Balance still owed</span></div>
+          </div>
+          <div class="stat-cards">
+            <div class="stat-card stat-green"><span class="stat-number" id="statPaid">0</span><span class="stat-label">Students: Paid</span></div>
+            <div class="stat-card stat-amber"><span class="stat-number" id="statPending">0</span><span class="stat-label">Students: Pending</span></div>
+            <div class="stat-card stat-red"><span class="stat-number" id="statOutstanding">0</span><span class="stat-label">Students: Outstanding</span></div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <caption>Class summary</caption>
+              <thead>
+                <tr><th scope="col">Class</th><th scope="col">Students</th><th scope="col">Class average</th><th scope="col">Fees outstanding</th></tr>
+              </thead>
+              <tbody id="classSummaryTable"></tbody>
+            </table>
+          </div>
+          <div class="form-card">
+            <h3>System tools</h3>
+            <p>Put the sample records back to how they were when the portal was first opened. This deletes any changes you made.</p>
+            <div id="resetMessage" hidden></div>
+            <button class="btn btn-danger" type="button" id="resetButton">Reset sample data</button>
+          </div>
+        </section>
+
+        <!-- ===== STUDENTS ===== -->
+        <section class="panel-section" id="section-students" aria-labelledby="students-heading" hidden>
+          <div class="panel-heading"><h1 id="students-heading">Student registry</h1></div>
+          <div id="studentMessage" hidden></div>
+
+          <form id="studentForm" class="form-card" novalidate>
+            <h3 id="studentFormTitle">Register a new student</h3>
+            <div class="form-grid">
+              <div class="field">
+                <label for="studentId">Student ID</label>
+                <div class="inline-field">
+                  <input type="text" id="studentId" maxlength="7" placeholder="KC26013" autocomplete="off">
+                  <button type="button" class="btn btn-light btn-small" id="generateId">Next ID</button>
+                </div>
+                <span class="hint">KC followed by 5 digits</span>
+              </div>
+              <div class="field"><label for="firstName">First name</label><input type="text" id="firstName" maxlength="40"></div>
+              <div class="field"><label for="lastName">Last name</label><input type="text" id="lastName" maxlength="40"></div>
+              <div class="field"><label for="dob">Date of birth</label><input type="date" id="dob"></div>
+              <div class="field"><label for="gender">Gender</label>
+                <select id="gender"><option value="">Choose</option><option>Female</option><option>Male</option></select></div>
+              <div class="field"><label for="residence">Residence</label>
+                <select id="residence"><option value="">Choose</option><option>Day Student</option><option>Boarder</option></select></div>
+              <div class="field"><label for="classId">Class</label><select id="classId"></select></div>
+              <div class="field"><label for="semester">Semester</label><select id="semester"></select></div>
+              <div class="field"><label for="guardianName">Guardian name</label><input type="text" id="guardianName" maxlength="40"></div>
+              <div class="field"><label for="guardianPhone">Guardian phone</label><input type="tel" id="guardianPhone" placeholder="876-555-0123"></div>
+              <div class="field"><label for="email">Email <span class="hint">(optional)</span></label><input type="email" id="email"></div>
+              <div class="field"><label for="tuitionDue">Tuition due (J$)</label><input type="number" id="tuitionDue" min="0" step="0.01" value="90000"></div>
+              <div class="field"><label for="dueDate">Tuition due date</label><input type="date" id="dueDate"></div>
+              <div class="field field-wide"><label for="address">Address <span class="hint">(optional)</span></label><input type="text" id="address" maxlength="100"></div>
+            </div>
+            <div class="button-row">
+              <button class="btn btn-red" type="submit" id="studentSave">Save student</button>
+              <button class="btn btn-light" type="button" id="studentCancel" hidden>Cancel edit</button>
+              <button class="btn btn-light" type="button" id="studentClear">Clear form</button>
+            </div>
+          </form>
+
+          <div class="toolbar">
+            <div class="field"><label for="studentSearch">Search by name or ID</label><input type="search" id="studentSearch"></div>
+            <div class="field"><label for="studentClassFilter">Class</label><select id="studentClassFilter"></select></div>
+            <div class="field"><label for="studentSemesterFilter">Semester</label><select id="studentSemesterFilter"></select></div>
+          </div>
+          <p id="studentCount" class="muted"></p>
+          <div class="table-wrap">
+            <table class="nowrap">
+              <caption>Registered students</caption>
+              <thead>
+                <tr><th scope="col">ID</th><th scope="col">Name</th><th scope="col">Class</th><th scope="col">Semester</th><th scope="col">Residence</th><th scope="col">Guardian phone</th><th scope="col">Actions</th></tr>
+              </thead>
+              <tbody id="studentTable"></tbody>
+            </table>
+          </div>
+          <div class="form-card" id="studentProfile" hidden></div>
+        </section>
+
+        <!-- ===== CLASSES AND SUBJECTS ===== -->
+        <section class="panel-section" id="section-classes" aria-labelledby="classes-heading" hidden>
+          <div class="panel-heading"><h1 id="classes-heading">Classes and subjects</h1></div>
+          <div id="classSubjectMessage" hidden></div>
+          <div class="two-column">
+            <div>
+              <form id="classForm" class="form-card" novalidate>
+                <h3>Add a class</h3>
+                <div class="field"><label for="className">Class name</label><input type="text" id="className" maxlength="30" placeholder="Grade 12A"></div>
+                <p></p>
+                <button class="btn" type="submit">Add class</button>
+              </form>
+              <div class="table-wrap">
+                <table>
+                  <caption>Classes</caption>
+                  <thead><tr><th scope="col">Class</th><th scope="col">Students</th><th scope="col">Action</th></tr></thead>
+                  <tbody id="classTable"></tbody>
+                </table>
+              </div>
+            </div>
+            <div>
+              <form id="subjectForm" class="form-card" novalidate>
+                <h3>Add a subject</h3>
+                <div class="form-grid">
+                  <div class="field"><label for="subjectName">Subject name</label><input type="text" id="subjectName" maxlength="40"></div>
+                  <div class="field"><label for="subjectCode">Short code</label><input type="text" id="subjectCode" maxlength="6" placeholder="BIO"></div>
+                  <div class="field field-wide"><label for="subjectTeacher">Teacher</label><select id="subjectTeacher"></select></div>
+                </div>
+                <button class="btn" type="submit">Add subject</button>
+              </form>
+              <div class="table-wrap">
+                <table>
+                  <caption>Subjects</caption>
+                  <thead><tr><th scope="col">Code</th><th scope="col">Subject</th><th scope="col">Teacher</th><th scope="col">Action</th></tr></thead>
+                  <tbody id="subjectTable"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== GRADES ===== -->
+        <section class="panel-section" id="section-grades" aria-labelledby="grades-heading" hidden>
+          <div class="panel-heading"><h1 id="grades-heading">Academic matrix: grades</h1></div>
+          <p>Choose a subject, class and semester, then load the students to enter or edit their marks. Marks are out of 100. Leave a box empty if there is no mark yet.</p>
+          <div id="gradeMessage" hidden></div>
+          <div class="toolbar">
+            <div class="field"><label for="gradeSubject">Subject</label><select id="gradeSubject"></select></div>
+            <div class="field"><label for="gradeClass">Class</label><select id="gradeClass"></select></div>
+            <div class="field"><label for="gradeSemester">Semester</label><select id="gradeSemester"></select></div>
+            <div class="field"><button class="btn" type="button" id="gradeLoad">Load students</button></div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <caption id="gradeCaption">Marks</caption>
+              <thead>
+                <tr><th scope="col">ID</th><th scope="col">Student</th><th scope="col">Test 1</th><th scope="col">Test 2</th><th scope="col">Exam</th><th scope="col">Average</th><th scope="col">Grade</th></tr>
+              </thead>
+              <tbody id="gradeTable"><tr><td colspan="7" class="empty-note">Choose a subject, class and semester, then press Load students.</td></tr></tbody>
+            </table>
+          </div>
+          <button class="btn btn-red" type="button" id="gradeSave" hidden>Save all marks</button>
+        </section>
+
+        <!-- ===== FINANCE ===== -->
+        <section class="panel-section" id="section-finance" aria-labelledby="finance-heading" hidden>
+          <div class="panel-heading"><h1 id="finance-heading">Tuition and payments</h1></div>
+          <div id="paymentMessage" hidden></div>
+          <form id="paymentForm" class="form-card" novalidate>
+            <h3>Record a payment</h3>
+            <div class="form-grid">
+              <div class="field"><label for="payStudent">Student</label><select id="payStudent"></select></div>
+              <div class="field"><label for="payAmount">Amount (J$)</label><input type="number" id="payAmount" min="0.01" step="0.01"></div>
+              <div class="field"><label for="payDate">Payment date</label><input type="date" id="payDate"></div>
+              <div class="field"><label for="payMethod">Method</label><select id="payMethod"></select></div>
+              <div class="field field-wide"><label for="payNote">Note <span class="hint">(optional)</span></label><input type="text" id="payNote" maxlength="60"></div>
+            </div>
+            <button class="btn btn-red" type="submit">Record payment</button>
+          </form>
+
+          <h2>Tuition ledger</h2>
+          <p><strong>Paid</strong> means nothing is left to pay. <strong>Pending</strong> means a balance remains and the due date has not passed. <strong>Outstanding</strong> means a balance remains and the due date has passed.</p>
+          <div class="toolbar">
+            <div class="field"><label for="ledgerSearch">Search by name or ID</label><input type="search" id="ledgerSearch"></div>
+            <div class="field"><label for="ledgerStatus">Status</label>
+              <select id="ledgerStatus"><option value="">All statuses</option><option>Paid</option><option>Pending</option><option>Outstanding</option></select></div>
+          </div>
+          <div class="table-wrap">
+            <table class="nowrap">
+              <caption>Student tuition accounts</caption>
+              <thead>
+                <tr><th scope="col">ID</th><th scope="col">Student</th><th scope="col">Class</th><th scope="col">Tuition due</th><th scope="col">Paid</th><th scope="col">Balance</th><th scope="col">Due date</th><th scope="col">Status</th><th scope="col">Statement</th></tr>
+              </thead>
+              <tbody id="ledgerTable"></tbody>
+            </table>
+          </div>
+          <div class="form-card" id="statementBox" hidden></div>
+
+          <h2>Payment history</h2>
+          <div class="table-wrap">
+            <table>
+              <caption>All payments, newest first</caption>
+              <thead>
+                <tr><th scope="col">Date</th><th scope="col">Student</th><th scope="col">Amount</th><th scope="col">Method</th><th scope="col">Note</th><th scope="col">Action</th></tr>
+              </thead>
+              <tbody id="paymentTable"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ===== ANNOUNCEMENTS ===== -->
+        <section class="panel-section" id="section-announcements" aria-labelledby="ann-heading" hidden>
+          <div class="panel-heading"><h1 id="ann-heading">Announcements</h1></div>
+          <div id="announcementMessage" hidden></div>
+          <form id="announcementForm" class="form-card" novalidate>
+            <h3>Post an announcement</h3>
+            <div class="form-grid">
+              <div class="field field-wide"><label for="annTitle">Title</label><input type="text" id="annTitle" maxlength="80"></div>
+              <div class="field field-wide"><label for="annText">Message</label><textarea id="annText" maxlength="300"></textarea></div>
+            </div>
+            <button class="btn" type="submit">Post announcement</button>
+          </form>
+          <div class="table-wrap">
+            <table>
+              <caption>Posted announcements</caption>
+              <thead><tr><th scope="col">Date</th><th scope="col">Title</th><th scope="col">Message</th><th scope="col">Action</th></tr></thead>
+              <tbody id="announcementTable"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ===== MESSAGES ===== -->
+        <section class="panel-section" id="section-messages" aria-labelledby="msg-heading" hidden>
+          <div class="panel-heading"><h1 id="msg-heading">Messages from the Contact Us page</h1></div>
+          <div class="table-wrap">
+            <table>
+              <caption>Saved messages, newest first</caption>
+              <thead><tr><th scope="col">Date</th><th scope="col">Name</th><th scope="col">Email</th><th scope="col">Phone</th><th scope="col">Subject</th><th scope="col">Message</th><th scope="col">Action</th></tr></thead>
+              <tbody id="messageTable"></tbody>
+            </table>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer no-print">
+    <div class="container">
+      <p><strong>Knox College School Portal</strong> &ndash; a student project for CIT2011 Web Programming, University of Technology, Jamaica.</p>
+      <p>Developed by Alistan Junior Byron (2509137), BSc Computing and Information Technology. This is not the official school website.</p>
+      <p>School facts come from public sources. The student, grade and payment records are fictional sample data.</p>
+      <p><a href="index.html">Home</a> | <a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a> | <a href="login.html">Login</a></p>
+    </div>
+  </footer>
+  <script defer src="JavaScript/KnoxCollege_Spalding_Clarendon_shared.js"></script>
+  <script defer src="JavaScript/KnoxCollege_Spalding_Clarendon_admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knox College School Portal - Project Report</title><style>
+@page { size: A4; }
+* { box-sizing: border-box; }
+body { font-family: Arial, Helvetica, sans-serif; font-size: 10.3pt; line-height: 1.5; color: #14213d; margin: 0; }
+h1, h2, h3 { break-after: avoid; page-break-after: avoid; font-family: Georgia, 'Times New Roman', serif; color: #0f2e6b; line-height: 1.2; }
+h1 { font-size: 19pt; margin: 22pt 0 7pt; border-bottom: 2.5pt solid #b3202a; padding-bottom: 3pt; }
+h2 { font-size: 13.5pt; margin: 15pt 0 5pt; }
+h3 { font-size: 11.5pt; margin: 11pt 0 4pt; }
+p { margin: 0 0 7pt; }
+ul, ol { margin: 0 0 8pt; padding-left: 18pt; } li { margin-bottom: 2pt; }
+table { width: 100%; border-collapse: collapse; margin: 6pt 0 10pt; font-size: 9.2pt; page-break-inside: auto; }
+tr { page-break-inside: avoid; }
+th { background: #0f2e6b; color: #fff; text-align: left; padding: 4pt 6pt; }
+td { border: 0.5pt solid #c9d3e6; padding: 4pt 6pt; vertical-align: top; }
+tbody tr:nth-child(even) td { background: #f6f8fc; }
+code, pre { font-family: 'Courier New', monospace; }
+code { background: #eef2f9; padding: 0 2pt; font-size: 9pt; }
+pre { background: #f4f6fa; border: 0.5pt solid #c9d3e6; border-left: 3pt solid #0f2e6b; padding: 6pt 8pt; font-size: 7.6pt; line-height: 1.32; white-space: pre-wrap; word-wrap: break-word; page-break-inside: avoid; margin: 4pt 0 9pt; }
+.cover { height: 238mm; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; page-break-after: always; border-top: 8pt solid #b3202a; border-bottom: 8pt solid #0f2e6b; padding: 0 12mm; }
+.cover h1 { border: 0; font-size: 30pt; margin: 6pt 0; }
+.cover .small { font-size: 12pt; color: #55627f; }
+.cover table { width: 78%; margin-top: 18pt; font-size: 10.5pt; }
+.callout { border-left: 4pt solid #0f2e6b; background: #e6eefb; padding: 6pt 9pt; margin: 6pt 0 10pt; }
+.callout.warn { border-left-color: #b3202a; background: #fbe9ea; }
+.callout.ok { border-left-color: #17693d; background: #e3f4ea; }
+.placeholder { color: #b3202a; font-weight: bold; }
+.small { font-size: 8.6pt; color: #55627f; }
+.break { page-break-before: always; }
+.nobreak { page-break-inside: avoid; }
+.box { display: inline-block; width: 9pt; height: 9pt; border: 0.8pt solid #14213d; vertical-align: middle; }
+.noprint { background: #fff3cd; border: 1px solid #b3202a; padding: 10px 14px; margin: 10px; font-family: Arial, sans-serif; font-size: 11pt; }
+.noprint input { width: 100%; padding: 6px; margin: 4px 0 10px; font-size: 11pt; }
+.noprint button { padding: 8px 16px; font-size: 11pt; background: #0f2e6b; color: #fff; border: 0; cursor: pointer; }
+@media print { .noprint { display: none !important; } }
+svg text { font-family: Arial, Helvetica, sans-serif; }
+</style></head><body>
+
+<div class="noprint">
+  <strong>Add your links, then save this report as a PDF</strong>
+  <p>Open this file in Google Chrome. Paste your GitHub repository link and your free hosting link below, then press the button and choose <em>Save as PDF</em>. The two links in the report become clickable. This yellow box does not print.</p>
+  <label>GitHub repository link<input id="ghInput" placeholder="https://github.com/your-username/your-repository"></label>
+  <label>Free hosting link<input id="hostInput" placeholder="https://your-username.github.io/your-repository/"></label>
+  <button type="button" onclick="window.print()">Print / Save as PDF</button>
+</div>
+
+<section class="cover">
+  <div class="small">University of Technology, Jamaica<br>School of Computing and IT (SCIT)</div>
+  <h1>Knox College School Portal</h1>
+  <div class="small">Project Report<br>CIT2011 &ndash; Web Programming &nbsp;|&nbsp; Individual School Portal Assignment</div>
+  <table><tbody>
+<tr><td>Full name</td><td>Alistan Junior Byron</td></tr>
+<tr><td>Student ID</td><td>2509137</td></tr>
+<tr><td>University</td><td>University of Technology, Jamaica</td></tr>
+<tr><td>School</td><td>School of Computing and IT</td></tr>
+<tr><td>Programme</td><td>BSc Computing and Information Technology</td></tr>
+<tr><td>Course</td><td>CIT2011 &ndash; Web Programming</td></tr>
+<tr><td>Tutor</td><td>Miss Anuli</td></tr>
+<tr><td>Lab day and time</td><td>Monday, 3:00 PM &ndash; 5:00 PM</td></tr>
+<tr><td>Submission type</td><td>Individual project (approved by the tutor)</td></tr>
+</tbody></table>
+  <p class="small" style="margin-top:16pt">Chosen school: Knox College, Spalding, Clarendon, Jamaica &nbsp;|&nbsp; November 2026</p>
+</section>
+
+<h1 style="margin-top:0">1. Student information</h1>
+<table><thead><tr><th style="width:32%">Detail</th><th>Information</th></tr></thead><tbody>
+<tr><td>Full name</td><td>Alistan Junior Byron</td></tr>
+<tr><td>Student ID</td><td>2509137</td></tr>
+<tr><td>University</td><td>University of Technology, Jamaica</td></tr>
+<tr><td>School</td><td>School of Computing and IT</td></tr>
+<tr><td>Programme</td><td>BSc Computing and Information Technology</td></tr>
+<tr><td>Course</td><td>CIT2011 &ndash; Web Programming</td></tr>
+<tr><td>Tutor</td><td>Miss Anuli</td></tr>
+<tr><td>Lab day and time</td><td>Monday, 3:00 PM &ndash; 5:00 PM</td></tr>
+<tr><td>Submission type</td><td>Individual project (approved by the tutor)</td></tr>
+</tbody></table>
+<p>This project was completed by one student. There are no other group members. The assignment brief describes a team role matrix, so Section 7 shows how all five development areas were covered by the same student.</p>
+
+<h1>2. Background of Knox College</h1>
+<p>Knox College is a co-educational high school in Spalding, Clarendon, for day pupils and boarders. It opened in 1947 and is named after the Scottish reformer John Knox. It was co-founded by Rev. Dr. Lewis Davidson and Mr. David Bent, and it stands on a hilltop campus of about 100 acres.</p>
+<p>The school belongs to the Knox complex of schools, together with the Neighbourhood Early Childhood Institute, Knox Junior School and Knox Community College. The United Church in Jamaica and the Cayman Islands owns and administers the complex. Knox College is a grant-aided secondary school and public sources describe it as the only co-educational boarding school at the secondary level in Jamaica.</p>
+<table class="nobreak"><thead><tr><th style="width:32%">Topic</th><th>What the public sources say</th></tr></thead><tbody>
+<tr><td>Motto</td><td><em>Niti Servire Neque Cedere</em> (to strive to serve and not to yield)</td></tr>
+<tr><td>Grades and intake</td><td>Grades 7 to 13; about 300 students enter Grade 7 each year and about 100 are in Grade 13</td></tr>
+<tr><td>Examinations</td><td>CSEC at the end of Grade 11 and CAPE in Grades 12 and 13; English Language, English Literature and Mathematics are compulsory</td></tr>
+<tr><td>Student life</td><td>Student council, prefects, Head Boy and Head Girl, about thirty clubs, houses Forbes Dennis, Grant, Murray and Webster</td></tr>
+<tr><td>Colours</td><td>Red, blue and white (used for this portal&rsquo;s design)</td></tr>
+<tr><td>Achievements</td><td>Several ISSA basketball and volleyball championships; entries in science, Spanish, literacy, arts, Junior Achievement and 4-H competitions</td></tr>
+<tr><td>Facilities and news</td><td>Boarding dormitories, playing field and gymnasium; a J$200 million sixth-form block began in March 2022; over J$319 million was announced in July 2026 for repairs after Hurricane Melissa</td></tr>
+</tbody></table>
+<div class="callout warn"><strong>Placeholders on purpose.</strong> The school&rsquo;s official mission statement, vision statement and core values were not found in the public sources, so the website shows clearly marked placeholders. The portal does not invent official statements or contact details. The sample students, grades, payments and announcements are fictional.</div>
+
+<h1>3. Why I chose Knox College</h1>
+<p>I attended Knox College for five years as a boarder, and it became a big part of my childhood. Living on campus meant school was home, routine and community. I studied IT, Electrical, Mathematics, English Language, English Literature, Spanish and French, and I got to know school leaders such as our Principal, Mr. Bourne, and our Vice Principal, Mrs. Platt.</p>
+<p>Mr. Brown taught me Mathematics, Miss Black taught me English Language, Miss Williams taught me English Literature, and Miss Gray taught me IT. In every class I was the youngest student, so I made it a habit to give each lesson my best. Along the way I served on a committee on the school board and was nominated for Head Boy. I came second, and I learned that trying your best and serving others matters more than any title.</p>
+<p>Knox College&rsquo;s motto, to strive to serve and not to yield, still guides me as I study Computing. I chose the school because I know it from the inside. That helped me design a portal around real school life: classes, boarding, teachers, grades and tuition.</p>
+
+<h1>4. Project overview</h1>
+<p>The Knox College School Portal is a front-end web application made with <strong>HTML5, CSS3 and vanilla JavaScript</strong>. There is no server and no framework. The browser&rsquo;s <strong>localStorage</strong> acts as the database, so records stay after the page is refreshed and every page reads the same data. The login session uses <strong>sessionStorage</strong>.</p>
+<table><thead><tr><th style="width:28%">Page</th><th>Purpose</th></tr></thead><tbody>
+<tr><td>index.html</td><td>Home page with school facts, latest announcements and links to the three portals</td></tr>
+<tr><td>about.html</td><td>History, motto, academics, student life, achievements, facilities, admissions, teacher directory and my Knox story</td></tr>
+<tr><td>contact.html</td><td>School address, phones, map and a message form using HTML5 validation (required, pattern, minlength)</td></tr>
+<tr><td>login.html</td><td>One login page that sends each role to its own dashboard; sample accounts and limits are explained</td></tr>
+<tr><td>admin-dashboard.html</td><td>Student CRUD, student IDs, classes and semesters, subjects, grades, tuition ledger, payments, announcements, messages</td></tr>
+<tr><td>teacher-dashboard.html</td><td>Subject, class and semester steps; student filter; batch grade entry with validation; printable report cards with automatic averages</td></tr>
+<tr><td>viewer-dashboard.html</td><td>Read-only student search, profiles, academic records, financial statements and reports with bar charts</td></tr>
+</tbody></table>
+<h2>Main features</h2>
+<ul>
+<li><strong>Students:</strong> register, view, edit and delete; duplicate IDs are blocked; the ID format is KC plus five digits; editing an ID updates that student&rsquo;s grades and payments too.</li>
+<li><strong>Grades:</strong> three marks per subject (Test 1, Test 2, Exam). The subject average, letter grade and overall average are calculated automatically. Marks must be from 0 to 100, and one bad mark blocks the whole batch.</li>
+<li><strong>Tuition:</strong> balance = tuition due &minus; total paid. The status is <em>Paid</em> (nothing left), <em>Pending</em> (balance left, due date not passed) or <em>Outstanding</em> (balance left, due date passed). Over-payments and future payment dates are rejected.</li>
+<li><strong>Roles:</strong> Administrator, Teacher and General Authorized User. Each dashboard checks the role before it shows anything. The viewer&rsquo;s script has no code that writes data.</li>
+<li><strong>Design:</strong> red, blue and white school colours, dashboard cards, organised tables, CSS Grid and Flexbox layouts, a phone menu and media queries at 900px, 768px and 480px, and a print stylesheet for report cards.</li>
+</ul>
+
+<h1>5. Sample login credentials</h1>
+<table><thead><tr><th>Role</th><th>Username</th><th>Password</th><th>Opens</th></tr></thead><tbody>
+<tr><td>Administrator</td><td>admin</td><td>Admin@123</td><td>admin-dashboard.html</td></tr>
+<tr><td>Teacher (three subjects, for testing)</td><td>teacher</td><td>Teacher@123</td><td>teacher-dashboard.html</td></tr>
+<tr><td>Teacher: Mr. Brown (Mathematics)</td><td>mr.brown</td><td>Teacher@123</td><td>teacher-dashboard.html</td></tr>
+<tr><td>Teacher: Miss Black (English Language)</td><td>miss.black</td><td>Teacher@123</td><td>teacher-dashboard.html</td></tr>
+<tr><td>Teacher: Miss Williams (English Literature)</td><td>miss.williams</td><td>Teacher@123</td><td>teacher-dashboard.html</td></tr>
+<tr><td>Teacher: Miss Gray (Information Technology)</td><td>miss.gray</td><td>Teacher@123</td><td>teacher-dashboard.html</td></tr>
+<tr><td>General authorized user (read-only)</td><td>viewer</td><td>Viewer@123</td><td>viewer-dashboard.html</td></tr>
+</tbody></table>
+
+<h2>Limits of simulated front-end authentication</h2>
+<ul>
+<li>The usernames and passwords are saved in the browser as plain text. Anyone can read them with the developer tools.</li>
+<li>The dashboards trust the role saved in the browser. Someone who edits browser storage could change their own role.</li>
+<li>There is no password hashing, no lock-out after wrong attempts and no secure session token.</li>
+<li>Real systems check passwords on a server, store them hashed, use HTTPS and keep the role on the server.</li>
+</ul>
+
+<h1>6. Individual project responsibilities</h1>
+<p>Because this is an approved individual assignment, I was responsible for every part of the work: researching the school, designing the pages and styles, writing the HTML, CSS and JavaScript, designing the data storage, building each dashboard, checking and testing the application, and preparing the documentation, the GitHub repository, the hosting and the presentation.</p>
+
+<h1>7. Individual role matrix (all five development areas)</h1>
+<p>The assignment suggests five team roles. Each role is listed below with the files that carry out that responsibility. All five were completed by the same student.</p>
+<table><thead><tr><th style="width:24%">Team member / role</th><th style="width:30%">Primary ownership (from the brief)</th><th>Student</th><th style="width:26%">Where it is in this project</th></tr></thead><tbody>
+<tr><td>Student 1: UI/UX &amp; Core Master Layout Architect</td><td>Baseline CSS, unified site grids, mobile responsiveness, public interfaces (Home, About Us, Contact Us)</td><td>Alistan Junior Byron (2509137)</td><td>CSS/&hellip;_styles.css, index.html, about.html, contact.html, Assets/</td></tr>
+<tr><td>Student 2: Authentication &amp; State Database Manager</td><td>Simulated login logic, role handling, database state set up with browser storage</td><td>Alistan Junior Byron (2509137)</td><td>login.html, JavaScript/&hellip;_login.js, JavaScript/&hellip;_shared.js (storage, sample data, session, role check)</td></tr>
+<tr><td>Student 3: Administrative Interface Developer</td><td>Data onboarding, student registry forms and master tables for administrators</td><td>Alistan Junior Byron (2509137)</td><td>admin-dashboard.html, JavaScript/&hellip;_admin.js</td></tr>
+<tr><td>Student 4: Instructor Workflow Specialist</td><td>Subject filters, grade entry components and academic calculations</td><td>Alistan Junior Byron (2509137)</td><td>teacher-dashboard.html, JavaScript/&hellip;_teacher.js, grade functions in &hellip;_shared.js</td></tr>
+<tr><td>Student 5: Financial Accounting &amp; Reporting Engineer</td><td>Tuition ledgers, search queries and printable output views across profile components</td><td>Alistan Junior Byron (2509137)</td><td>tuition ledger and payments in &hellip;_admin.js, finance functions in &hellip;_shared.js, viewer-dashboard.html, &hellip;_viewer.js, printable report card</td></tr>
+</tbody></table>
+<p class="small">In file names, &ldquo;&hellip;&rdquo; stands for KnoxCollege_Spalding_Clarendon.</p>
+
+<h1>8. GitHub repository and free hosting</h1>
+<table><thead><tr><th style="width:32%">Item</th><th>Link</th></tr></thead><tbody>
+<tr><td>GitHub repository</td><td><a id="ghLink" class="placeholder">[GitHub repository link: to be added after the repository is created]</a></td></tr>
+<tr><td>Free hosting (live website)</td><td><a id="hostLink" class="placeholder">[Free hosting link: to be added after the site is published]</a></td></tr>
+</tbody></table>
+<p class="small">These two links have not been created yet, so they are placeholders. They are not invented.</p>
+
+<h1 class="break" style="margin-top:0">9. Website sitemap</h1>
+<svg viewBox="0 0 500 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Website sitemap" style="width:100%;max-width:640px"><rect x="165" y="8" width="170" height="34" rx="3" fill="#0f2e6b" stroke="#0f2e6b"/><text x="250.0" y="24.0" text-anchor="middle" font-size="9" font-weight="bold" fill="#fff">index.html</text><text x="250.0" y="35.0" text-anchor="middle" font-size="7" fill="#fff">Home: facts, announcements, role cards</text><polyline points="250,42 250,60.0 70,60.0 70,78" fill="none" stroke="#55627f" stroke-width="1"/><rect x="10" y="78" width="120" height="34" rx="3" fill="#0f2e6b" stroke="#0f2e6b"/><text x="70.0" y="94.0" text-anchor="middle" font-size="9" font-weight="bold" fill="#fff">about.html</text><text x="70.0" y="105.0" text-anchor="middle" font-size="7" fill="#fff">About Us</text><polyline points="250,42 250,60.0 250,60.0 250,78" fill="none" stroke="#55627f" stroke-width="1"/><rect x="190" y="78" width="120" height="34" rx="3" fill="#b3202a" stroke="#0f2e6b"/><text x="250.0" y="94.0" text-anchor="middle" font-size="9" font-weight="bold" fill="#fff">login.html</text><text x="250.0" y="105.0" text-anchor="middle" font-size="7" fill="#fff">Authentication</text><polyline points="250,42 250,60.0 430,60.0 430,78" fill="none" stroke="#55627f" stroke-width="1"/><rect x="370" y="78" width="120" height="34" rx="3" fill="#0f2e6b" stroke="#0f2e6b"/><text x="430.0" y="94.0" text-anchor="middle" font-size="9" font-weight="bold" fill="#fff">contact.html</text><text x="430.0" y="105.0" text-anchor="middle" font-size="7" fill="#fff">Contact Us</text><text x="70" y="128" text-anchor="middle" font-size="7.4" fill="#14213d">History</text><text x="70" y="138" text-anchor="middle" font-size="7.4" fill="#14213d">Motto, mission, vision, values</text><text x="70" y="148" text-anchor="middle" font-size="7.4" fill="#14213d">Academics</text><text x="70" y="158" text-anchor="middle" font-size="7.4" fill="#14213d">Student life</text><text x="70" y="168" text-anchor="middle" font-size="7.4" fill="#14213d">Achievements</text><text x="70" y="178" text-anchor="middle" font-size="7.4" fill="#14213d">Facilities</text><text x="70" y="188" text-anchor="middle" font-size="7.4" fill="#14213d">Admissions</text><text x="70" y="198" text-anchor="middle" font-size="7.4" fill="#14213d">Teacher directory</text><text x="70" y="208" text-anchor="middle" font-size="7.4" fill="#14213d">Student story</text><text x="430" y="128" text-anchor="middle" font-size="7.4" fill="#14213d">School address and phones</text><text x="430" y="138" text-anchor="middle" font-size="7.4" fill="#14213d">Map</text><text x="430" y="148" text-anchor="middle" font-size="7.4" fill="#14213d">Message form with</text><text x="430" y="158" text-anchor="middle" font-size="7.4" fill="#14213d">HTML5 validation</text><text x="430" y="168" text-anchor="middle" font-size="7.4" fill="#14213d">(saved to localStorage)</text><text x="250" y="150" text-anchor="middle" font-size="7.5" font-style="italic" fill="#55627f">after login, each role goes to its own dashboard</text><polyline points="250,112 250,163.5 80,163.5 80,215" fill="none" stroke="#55627f" stroke-width="1"/><rect x="10" y="215" width="140" height="36" rx="3" fill="#0f2e6b" stroke="#0f2e6b"/><text x="80.0" y="232.0" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#fff">admin-dashboard.html</text><text x="80.0" y="243.0" text-anchor="middle" font-size="7" fill="#fff">Administrator</text><polyline points="250,112 250,163.5 250,163.5 250,215" fill="none" stroke="#55627f" stroke-width="1"/><rect x="180" y="215" width="140" height="36" rx="3" fill="#0f2e6b" stroke="#0f2e6b"/><text x="250.0" y="232.0" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#fff">teacher-dashboard.html</text><text x="250.0" y="243.0" text-anchor="middle" font-size="7" fill="#fff">Teacher</text><polyline points="250,112 250,163.5 420,163.5 420,215" fill="none" stroke="#55627f" stroke-width="1"/><rect x="350" y="215" width="140" height="36" rx="3" fill="#0f2e6b" stroke="#0f2e6b"/><text x="420.0" y="232.0" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#fff">viewer-dashboard.html</text><text x="420.0" y="243.0" text-anchor="middle" font-size="7" fill="#fff">General authorized user</text><text x="80" y="270" text-anchor="middle" font-size="7.4" fill="#14213d">Overview</text><text x="80" y="280" text-anchor="middle" font-size="7.4" fill="#14213d">Students (CRUD)</text><text x="80" y="290" text-anchor="middle" font-size="7.4" fill="#14213d">Classes and subjects</text><text x="80" y="300" text-anchor="middle" font-size="7.4" fill="#14213d">Grades</text><text x="80" y="310" text-anchor="middle" font-size="7.4" fill="#14213d">Tuition and payments</text><text x="80" y="320" text-anchor="middle" font-size="7.4" fill="#14213d">Announcements</text><text x="80" y="330" text-anchor="middle" font-size="7.4" fill="#14213d">Messages</text><text x="250" y="270" text-anchor="middle" font-size="7.4" fill="#14213d">Enter grades (3 steps, batch save)</text><text x="250" y="280" text-anchor="middle" font-size="7.4" fill="#14213d">Report cards (printable)</text><text x="420" y="270" text-anchor="middle" font-size="7.4" fill="#14213d">Student search and profile</text><text x="420" y="280" text-anchor="middle" font-size="7.4" fill="#14213d">Reports (filters, bar charts)</text><text x="420" y="290" text-anchor="middle" font-size="7.4" fill="#14213d">READ-ONLY</text><rect x="10" y="372" width="480" height="82" rx="3" fill="#e6eefb" stroke="#0f2e6b"/><text x="250" y="392" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#0f2e6b">Shared browser storage (the simulated database)</text><text x="250" y="408" text-anchor="middle" font-size="7.6" fill="#14213d">localStorage: students, teachers, subjects, classes, grades, payments, announcements, messages, users</text><text x="250" y="422" text-anchor="middle" font-size="7.6" fill="#55627f">sessionStorage: the logged-in user (the simulated session)</text><text x="250" y="442" text-anchor="middle" font-size="7.4" font-style="italic" fill="#55627f">Every page also uses CSS/styles.css and JavaScript/shared.js</text></svg>
+<table style="margin-top:10pt"><thead><tr><th style="width:30%">Page</th><th>Sections</th></tr></thead><tbody>
+<tr><td>about.html</td><td>History; motto, mission, vision, values; academics; student life; achievements; facilities; admissions; teacher directory; my story; sources</td></tr>
+<tr><td>admin-dashboard.html</td><td>Overview; Students; Classes and subjects; Grades; Tuition and payments; Announcements; Messages</td></tr>
+<tr><td>teacher-dashboard.html</td><td>Enter grades; Report cards</td></tr>
+<tr><td>viewer-dashboard.html</td><td>Student search; Reports</td></tr>
+</tbody></table>
+
+<h1>10. How the data is stored</h1>
+<table><thead><tr><th style="width:36%">Storage key</th><th>What it holds</th></tr></thead><tbody>
+<tr><td>knox_students</td><td>Student profiles, class, semester, tuition due and due date</td></tr>
+<tr><td>knox_teachers, knox_subjects, knox_classes</td><td>Teacher directory, subjects with their teacher, class names</td></tr>
+<tr><td>knox_grades</td><td>Test 1, Test 2 and Exam marks for each student, subject and semester</td></tr>
+<tr><td>knox_payments</td><td>Each tuition payment with date, amount and method</td></tr>
+<tr><td>knox_announcements, knox_messages</td><td>Home page announcements and Contact Us messages</td></tr>
+<tr><td>knox_users (localStorage), knox_session (sessionStorage)</td><td>Sample accounts and the logged-in user</td></tr>
+</tbody></table>
+<p>The first time any page opens, sample records are added. After that, the Administrator&rsquo;s changes are saved with <code>JSON.stringify</code> and read back with <code>JSON.parse</code>. The browser keeps this data per website address, so each person who opens the hosted site gets their own private copy.</p>
+
+<h1>11. Testing</h1>
+<p>The project was tested with scripts written during development. They ran every dashboard in a simulated browser and in Google Chrome. The checks covered navigation and links, login and logout, role protection, student create, edit and delete, duplicate IDs, form validation, grade entry, report card calculations, tuition calculations and status changes, search and filtering, read-only access, saved data after a refresh, phone-width layout, and console errors. All checks passed, and Chrome reported no console errors or warnings. The separate Testing Checklist lists every check and leaves boxes for you to repeat the important ones in your own browser. Firefox, Safari, real phones and physical printing were not tested.</p>
+
+<h1>12. Sources</h1>
+<ul class="small">
+<li>Wikipedia, &ldquo;Knox College (Jamaica)&rdquo; &ndash; en.wikipedia.org/wiki/Knox_College_(Jamaica)</li>
+<li>Jamaica Observer, &ldquo;Knox College aiming to build new sixth-form block in 18 months&rdquo;, 14 March 2022</li>
+<li>Jamaica Gleaner, &ldquo;Knox College breaks ground for $200m sixth-form block&rdquo;, 10 March 2022</li>
+<li>Jamaica Information Service, &ldquo;$319 Million Allocated for Hurricane Repairs at Knox College&rdquo;, July 2026</li>
+<li>SportsMax school listing for the P.O. box and telephone numbers (to be confirmed with the school)</li>
+<li>CIT2011 lecture and lab notes (Semester 1, 2026/2027)</li>
+</ul>
+<p class="small">This is a student project. It is not the official Knox College website.</p>
+
+<script>
+  function setLink(inputId, linkId, placeholderText) {
+    const input = document.getElementById(inputId), link = document.getElementById(linkId);
+    input.addEventListener("input", function () {
+      const url = input.value.trim();
+      if (url === "") { link.removeAttribute("href"); link.textContent = placeholderText; link.className = "placeholder"; }
+      else { link.href = url; link.textContent = url; link.className = ""; }
+    });
+  }
+  setLink("ghInput", "ghLink", "[GitHub repository link: to be added after the repository is created]");
+  setLink("hostInput", "hostLink", "[Free hosting link: to be added after the site is published]");
+</script>
+
+</body></html>

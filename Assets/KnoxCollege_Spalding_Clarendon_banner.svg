@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="bt bd">
+  <title id="bt">Hilltop school illustration</title>
+  <desc id="bd">A stylised illustration of a school building on a hill, in red, blue and white. It is not a photograph of Knox College.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b2253"/>
+      <stop offset="0.65" stop-color="#2c5fae"/>
+      <stop offset="1" stop-color="#9fc0ea"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="440" fill="url(#sky)"/>
+  <circle cx="1010" cy="120" r="46" fill="#ffffff" opacity="0.9"/>
+  <path d="M0 330 C180 280 330 300 520 270 C700 240 860 270 1200 230 V440 H0 Z" fill="#17407f"/>
+  <path d="M0 370 C220 320 400 345 600 310 C800 275 980 310 1200 285 V440 H0 Z" fill="#0f2e6b"/>
+  <path d="M0 410 C260 372 520 395 760 366 C960 345 1090 370 1200 358 V440 H0 Z" fill="#b3202a"/>
+  <g fill="#ffffff">
+    <rect x="470" y="196" width="260" height="82"/>
+    <rect x="570" y="140" width="60" height="140"/>
+    <path d="M562 142 L600 106 L638 142 Z"/>
+    <rect x="596" y="72" width="4" height="36"/>
+  </g>
+  <path d="M600 74 H632 L624 83 L632 92 H600 Z" fill="#b3202a"/>
+  <g fill="#0f2e6b">
+    <rect x="490" y="214" width="22" height="30"/>
+    <rect x="530" y="214" width="22" height="30"/>
+    <rect x="648" y="214" width="22" height="30"/>
+    <rect x="688" y="214" width="22" height="30"/>
+    <rect x="588" y="160" width="24" height="32"/>
+    <rect x="588" y="236" width="24" height="42"/>
+  </g>
+  <g fill="#ffffff" opacity="0.85">
+    <rect x="360" y="250" width="70" height="30"/>
+    <rect x="800" y="246" width="80" height="34"/>
+  </g>
+</svg>

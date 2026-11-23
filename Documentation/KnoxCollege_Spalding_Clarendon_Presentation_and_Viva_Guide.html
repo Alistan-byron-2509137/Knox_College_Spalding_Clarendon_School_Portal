@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presentation Outline and Viva Study Guide</title><style>
+@page { size: A4; }
+* { box-sizing: border-box; }
+body { font-family: Arial, Helvetica, sans-serif; font-size: 10.3pt; line-height: 1.5; color: #14213d; margin: 0; }
+h1, h2, h3 { break-after: avoid; page-break-after: avoid; font-family: Georgia, 'Times New Roman', serif; color: #0f2e6b; line-height: 1.2; }
+h1 { font-size: 19pt; margin: 22pt 0 7pt; border-bottom: 2.5pt solid #b3202a; padding-bottom: 3pt; }
+h2 { font-size: 13.5pt; margin: 15pt 0 5pt; }
+h3 { font-size: 11.5pt; margin: 11pt 0 4pt; }
+p { margin: 0 0 7pt; }
+ul, ol { margin: 0 0 8pt; padding-left: 18pt; } li { margin-bottom: 2pt; }
+table { width: 100%; border-collapse: collapse; margin: 6pt 0 10pt; font-size: 9.2pt; page-break-inside: auto; }
+tr { page-break-inside: avoid; }
+th { background: #0f2e6b; color: #fff; text-align: left; padding: 4pt 6pt; }
+td { border: 0.5pt solid #c9d3e6; padding: 4pt 6pt; vertical-align: top; }
+tbody tr:nth-child(even) td { background: #f6f8fc; }
+code, pre { font-family: 'Courier New', monospace; }
+code { background: #eef2f9; padding: 0 2pt; font-size: 9pt; }
+pre { background: #f4f6fa; border: 0.5pt solid #c9d3e6; border-left: 3pt solid #0f2e6b; padding: 6pt 8pt; font-size: 7.6pt; line-height: 1.32; white-space: pre-wrap; word-wrap: break-word; page-break-inside: avoid; margin: 4pt 0 9pt; }
+.cover { height: 238mm; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; page-break-after: always; border-top: 8pt solid #b3202a; border-bottom: 8pt solid #0f2e6b; padding: 0 12mm; }
+.cover h1 { border: 0; font-size: 30pt; margin: 6pt 0; }
+.cover .small { font-size: 12pt; color: #55627f; }
+.cover table { width: 78%; margin-top: 18pt; font-size: 10.5pt; }
+.callout { border-left: 4pt solid #0f2e6b; background: #e6eefb; padding: 6pt 9pt; margin: 6pt 0 10pt; }
+.callout.warn { border-left-color: #b3202a; background: #fbe9ea; }
+.callout.ok { border-left-color: #17693d; background: #e3f4ea; }
+.placeholder { color: #b3202a; font-weight: bold; }
+.small { font-size: 8.6pt; color: #55627f; }
+.break { page-break-before: always; }
+.nobreak { page-break-inside: avoid; }
+.box { display: inline-block; width: 9pt; height: 9pt; border: 0.8pt solid #14213d; vertical-align: middle; }
+.noprint { background: #fff3cd; border: 1px solid #b3202a; padding: 10px 14px; margin: 10px; font-family: Arial, sans-serif; font-size: 11pt; }
+.noprint input { width: 100%; padding: 6px; margin: 4px 0 10px; font-size: 11pt; }
+.noprint button { padding: 8px 16px; font-size: 11pt; background: #0f2e6b; color: #fff; border: 0; cursor: pointer; }
+@media print { .noprint { display: none !important; } }
+svg text { font-family: Arial, Helvetica, sans-serif; }
+</style></head><body>
+<section class="cover"><div class="small">University of Technology, Jamaica | School of Computing and IT</div>
+<h1>Presentation Outline and Viva Study Guide</h1><div class="small">10-minute presentation + 10-minute individual viva | Knox College School Portal</div>
+<table><tbody>
+<tr><td>Full name</td><td>Alistan Junior Byron</td></tr>
+<tr><td>Student ID</td><td>2509137</td></tr>
+<tr><td>University</td><td>University of Technology, Jamaica</td></tr>
+<tr><td>School</td><td>School of Computing and IT</td></tr>
+<tr><td>Programme</td><td>BSc Computing and Information Technology</td></tr>
+<tr><td>Course</td><td>CIT2011 &ndash; Web Programming</td></tr>
+<tr><td>Tutor</td><td>Miss Anuli</td></tr>
+<tr><td>Lab day and time</td><td>Monday, 3:00 PM &ndash; 5:00 PM</td></tr>
+<tr><td>Submission type</td><td>Individual project (approved by the tutor)</td></tr>
+</tbody></table></section>
+<h1 style="margin-top:0">How to use this guide</h1>
+<p>The assignment gives each group <strong>20 minutes</strong>: a <strong>10-minute presentation</strong> (20 marks) and a <strong>10-minute viva</strong> (30 marks, questions about the source code based on Bloom&rsquo;s Taxonomy). The presentation marks look at a working application with <strong>no console errors</strong> and at the design and navigation. The viva checks that <strong>you understand your own code</strong>.</p>
+<div class="callout warn"><strong>Study the code, not only this guide.</strong> The viva questions are about the files you submit. Before the day, open each file once and read it slowly, using Part C as a map. Every code box in this guide is copied from your real files. If your course requires you to declare help from AI tools, check with Miss Anuli and declare it.</div>
+<p>Part A is the presentation plan. Part B is a one-page checklist for the day. Part C is the viva study guide, written in simple language.</p>
+
+<h1>Part A. 10-minute presentation outline</h1>
+<h2>Before you start (2 minutes of setup, not part of the 10)</h2>
+<ul>
+<li>Use Google Chrome. Open the hosted site (or the local <code>index.html</code>) and press <strong>F12</strong> so the <strong>Console</strong> tab is visible. It should be empty. That shows the zero-errors mark.</li>
+<li>Log in as <code>admin</code>, open the Overview, and press <strong>Reset sample data</strong> so the demo always starts from the same records. Then press <strong>Log out</strong>.</li>
+<li>Have a second tab ready on a phone-width window (press <strong>Ctrl+Shift+M</strong> in Chrome DevTools) for the responsive demo.</li>
+<li>Keep screenshots of each dashboard in a folder in case the internet or the projector fails.</li>
+</ul>
+
+<table><thead><tr><th style="width:11%">Time</th><th style="width:21%">Segment</th><th>What to say (simple words)</th><th style="width:25%">What to show</th></tr></thead><tbody>
+<tr><td>0:00&ndash;0:45</td><td>1. Introduction</td><td>&ldquo;Good day. I am Alistan Junior Byron, student 2509137, BSc Computing and Information Technology, lab Monday 3 to 5. My project is a school portal for Knox College in Spalding, Clarendon. I built it alone with my tutor&rsquo;s approval, using only HTML, CSS and JavaScript.&rdquo;</td><td>Home page</td></tr>
+<tr><td>0:45&ndash;1:45</td><td>2. The school and why I chose it</td><td>&ldquo;I was a boarder at Knox for five years. I was the youngest in my classes, served on a committee on the school board and was nominated for Head Boy. I know how the school works, so I could build a portal that matches real school life. The colours red, blue and white come from the school.&rdquo;</td><td>About page: history, motto, teacher directory, my story</td></tr>
+<tr><td>1:45&ndash;2:45</td><td>3. Overview and sitemap</td><td>&ldquo;There are seven pages. Three are public, one is the login, and three are dashboards for the Administrator, the Teacher and a read-only Viewer. All pages share one CSS file and one shared JavaScript file. The browser&rsquo;s localStorage works as the database.&rdquo;</td><td>Sitemap from the report</td></tr>
+<tr><td>2:45&ndash;3:30</td><td>4. Design and responsiveness</td><td>&ldquo;I used CSS Grid for cards and dashboards, Flexbox for the header, and media queries at 900, 768 and 480 pixels. On a phone, the menu becomes a button.&rdquo;</td><td>Shrink the window; open the Menu button</td></tr>
+<tr><td>3:30&ndash;4:30</td><td>5. Login and roles</td><td>&ldquo;This login is simulated. Wrong password: a message. Right password: it sends each role to its own dashboard. If a teacher tries the admin page, the guard sends them back.&rdquo;</td><td>Wrong password, then <code>admin</code> / <code>Admin@123</code>; paste the admin-dashboard address while logged in as a teacher</td></tr>
+<tr><td>4:30&ndash;6:00</td><td>6. Administrator demo</td><td>&ldquo;Students has Create, Read, Update and Delete. Watch the validation: a duplicate ID is blocked. I register a student, edit them and view their profile. In Tuition and payments I record a payment and the status and balance update at once.&rdquo;</td><td>Students: press Register with empty form; try ID KC26001; use Next ID; save. Tuition: pay KC26004 J$100,000 then the rest</td></tr>
+<tr><td>6:00&ndash;7:30</td><td>7. Teacher demo</td><td>&ldquo;The teacher follows three steps: subject, class, semester. Then marks for the whole class are entered together. A bad mark such as 150 stops the whole batch. The report card works out the averages automatically and can be printed.&rdquo;</td><td>Log in as <code>mr.brown</code>; steps; type 150 then fix; Save all marks; Report cards for KC26005; Print</td></tr>
+<tr><td>7:30&ndash;8:30</td><td>8. Viewer demo</td><td>&ldquo;The viewer can search and filter, open a profile, and see reports with bar charts. There are no edit or delete buttons, and the viewer script contains no code that saves data.&rdquo;</td><td>Log in as <code>viewer</code>; filter Outstanding; View a profile; Reports</td></tr>
+<tr><td>8:30&ndash;9:15</td><td>9. Data and limits</td><td>&ldquo;Data is saved as JSON text in localStorage, so it survives a refresh and every page shares it. The login is only a simulation: passwords are plain text and the role can be edited in the browser. A real system needs a server.&rdquo;</td><td>DevTools &gt; Application &gt; Local Storage (knox_students)</td></tr>
+<tr><td>9:15&ndash;10:00</td><td>10. Conclusion</td><td>&ldquo;I learned to organise a multi-page project, validate forms and keep data in sync between pages. Next I would add a real back end, hashed passwords and attendance. Thank you. I am ready for questions.&rdquo;</td><td>Home page</td></tr>
+</tbody></table>
+<h2>If something goes wrong</h2>
+<ul>
+<li><strong>Blank dashboard:</strong> you are not logged in, or you are in a new tab (the session is per tab). Log in again.</li>
+<li><strong>Strange data:</strong> log in as admin and press <strong>Reset sample data</strong>.</li>
+<li><strong>Internet down:</strong> open the local <code>index.html</code> from the project folder. Everything except the map works offline.</li>
+</ul>
+
+<h1 class="break" style="margin-top:0">Part B. One-page checklist for the day</h1>
+<table><tbody>
+<tr><td><span class="box"></span> Chrome open, Console visible and empty</td><td><span class="box"></span> Sample data reset, logged out</td></tr>
+<tr><td><span class="box"></span> Hosted link works on the lab computer</td><td><span class="box"></span> Local copy of the folder as backup</td></tr>
+<tr><td><span class="box"></span> Credentials written down (admin, mr.brown, viewer)</td><td><span class="box"></span> Screenshots saved as backup</td></tr>
+<tr><td><span class="box"></span> I can explain every file in the folder</td><td><span class="box"></span> I practised the demo twice with a timer</td></tr>
+<tr><td><span class="box"></span> ID card and student number ready</td><td><span class="box"></span> Report PDF has both links filled in</td></tr>
+</tbody></table>
+
+<h1 class="break" style="margin-top:0">Part C. Viva study guide (10 minutes)</h1>
+<h2>C1. The file map: what is in each file</h2>
+<p>In every file name, KnoxCollege_Spalding_Clarendon is shortened to &hellip;.</p>
+<table><thead><tr><th style="width:34%">File</th><th>What it does</th></tr></thead><tbody>
+<tr><td>index.html, about.html, contact.html, login.html</td><td>The four public pages (structure and content only)</td></tr>
+<tr><td>admin-dashboard.html, teacher-dashboard.html, viewer-dashboard.html</td><td>The three dashboards (structure only; the behaviour is in JavaScript)</td></tr>
+<tr><td>CSS/&hellip;_styles.css</td><td>All the styling: colours, layout, tables, forms, badges, phone layout, printing</td></tr>
+<tr><td>JavaScript/&hellip;_shared.js</td><td>Used by every page: storage, sample data, login session, helper functions, money and grade calculations, validation</td></tr>
+<tr><td>JavaScript/&hellip;_public.js</td><td>Home announcements, About teacher directory, Contact form</td></tr>
+<tr><td>JavaScript/&hellip;_login.js</td><td>Checks the login form and redirects by role</td></tr>
+<tr><td>JavaScript/&hellip;_admin.js</td><td>Administrator: student CRUD, classes, subjects, grades, tuition, announcements, messages</td></tr>
+<tr><td>JavaScript/&hellip;_teacher.js</td><td>Teacher: three steps, batch marks, report cards</td></tr>
+<tr><td>JavaScript/&hellip;_viewer.js</td><td>Viewer: search, profile, reports (read-only)</td></tr>
+<tr><td>Assets/</td><td>The emblem and the banner picture (my own SVG drawings, not the official crest)</td></tr>
+</tbody></table>
+<p>Pages load scripts with <code>defer</code>. That means &ldquo;download the script while the page loads, but run it only after the HTML is ready&rdquo;. <code>shared.js</code> is listed first so its functions exist when the other file runs.</p>
+
+<h2>C2. HTML</h2>
+<ul>
+<li><strong>Semantic elements</strong> describe the meaning of each area: <code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>article</code>, <code>aside</code> (dashboard menu), <code>footer</code>, <code>address</code>, <code>table</code> with <code>caption</code>, <code>thead</code>, <code>tbody</code>, and <code>th scope=&quot;col&quot;</code>. Screen readers and search engines use them.</li>
+<li><strong>Forms:</strong> every input has a <code>label</code> linked with <code>for</code> and <code>id</code>. The Contact form uses HTML5 rules: <code>required</code>, <code>type=&quot;email&quot;</code>, <code>pattern</code> (a regular expression), <code>minlength</code>, <code>maxlength</code>, and <code>title</code> (the hint text).</li>
+<li><strong>Accessibility touches:</strong> a skip link, <code>aria-current=&quot;page&quot;</code> on the current menu link, <code>aria-expanded</code> on the phone menu button, visible focus outlines, and alt text on images.</li>
+<li><strong>Why the same header in each page?</strong> Each page repeats the same header and footer HTML, and JavaScript adds the Login or Logout links, so the menu always matches the login state.</li>
+</ul>
+
+<h2>C3. CSS</h2>
+<ul>
+<li><strong>CSS variables</strong> (<code>:root</code>) hold the school colours, so changing <code>--blue</code> or <code>--red</code> changes the whole site.</li>
+<li><strong>Flexbox</strong> (one direction): the header, button rows, toolbars. <strong>Grid</strong> (rows and columns): card grids, forms (<code>repeat(auto-fit, minmax(...))</code>) and the dashboard (230px menu + content).</li>
+<li><strong>Media queries</strong> at 900px (dashboard menu goes on top), 768px (header menu becomes a button) and 480px (smaller headings, full-width buttons). <code>@media print</code> hides the menu and footer so only the report card prints.</li>
+<li><strong>Tables</strong> sit inside <code>.table-wrap</code> with <code>overflow-x: auto</code>, so a wide table scrolls inside its box instead of breaking the page on a phone.</li>
+<li><strong>The guard class:</strong> dashboards start with <code>body.guard main { visibility: hidden; }</code>. JavaScript removes the class only if the login check passes, so nothing flashes on screen for the wrong person.</li>
+</ul>
+
+<h2>C4. JavaScript basics used</h2>
+<ul>
+<li><strong>Variables:</strong> <code>const</code> for values that are not reassigned, <code>let</code> for values that change (counters, totals). No <code>var</code>.</li>
+<li><strong>Arrays and objects:</strong> a student is an object (<code>{ id, firstName, ... }</code>); the list of students is an array of those objects.</li>
+<li><strong>Functions:</strong> each function does one job (for example <code>getFinance</code> works out money). Some functions return a value, others change the page.</li>
+<li><strong>Loops and conditions:</strong> <code>for...of</code> loops go through records; <code>if / else if / else</code> decides statuses, letter grades and validation.</li>
+<li><strong>Events:</strong> <code>addEventListener(&quot;click&quot;, ...)</code>, <code>&quot;submit&quot;</code>, <code>&quot;input&quot;</code>, <code>&quot;change&quot;</code>. <code>event.preventDefault()</code> stops the browser from reloading the page when a form is submitted.</li>
+<li><strong>DOM:</strong> <code>getElementById</code> finds an element; <code>createElement</code>, <code>appendChild</code> and <code>textContent</code> build tables and messages.</li>
+<li><strong>textContent, not innerHTML:</strong> text typed by a user is shown with <code>textContent</code>, so it can never run as code. That protects against XSS (cross-site scripting). My lecture notes warn about <code>innerHTML</code> with user input.</li>
+</ul>
+
+<h2>C5. Browser storage (the simulated database)</h2>
+<ul>
+<li><strong>localStorage</strong> keeps text under a key, stays after the tab or browser closes, and is shared by all pages of the same website address. <strong>sessionStorage</strong> works the same way but is cleared when the tab closes. I use localStorage for records and sessionStorage for the login.</li>
+<li>Storage only holds <strong>text</strong>, so lists of objects are turned into text with <code>JSON.stringify</code> and back with <code>JSON.parse</code>.</li>
+<li>Limits: about 5 MB per site, only in that browser, anyone can read or change it with the developer tools, and it is not a real database.</li>
+</ul>
+<pre>function loadList(key) {
+  const text = localStorage.getItem(key);
+  if (text === null) {
+    return [];
+  }
+  try {
+    const data = JSON.parse(text);
+    if (Array.isArray(data)) {
+      return data;
+    }
+    return [];
+  } catch (error) {
+    return [];
+  }
+}</pre>
+<pre>function saveList(key, list) {
+  localStorage.setItem(key, JSON.stringify(list));
+}</pre>
+<p><strong>Explain it:</strong> <code>loadList</code> reads the text. If nothing is saved (<code>null</code>) or the text is damaged (the <code>catch</code>), it returns an empty list so the page does not crash. <code>saveList</code> turns the list into text and stores it. Every other function in the project reads and writes through these two. That is how pages share data and how records survive a refresh.</p>
+<p><strong>First visit:</strong> <code>initData()</code> checks the key <code>knox_data_ready</code>. If it is missing, <code>seedAllData()</code> saves the sample users, teachers, subjects, classes, students, payments, grades and announcements.</p>
+
+<h2>C6. CRUD (Create, Read, Update, Delete) on students</h2>
+<table><thead><tr><th style="width:16%">Operation</th><th style="width:30%">Function in admin.js</th><th>What happens</th></tr></thead><tbody>
+<tr><td>Create</td><td>handleStudentSubmit (when <code>editingId</code> is empty)</td><td>The form is checked by <code>readStudentForm</code>. If there are no errors, the student is pushed into the array and saved.</td></tr>
+<tr><td>Read</td><td>renderStudents, viewStudent</td><td>Loads the list, filters it by search, class and semester, and builds table rows. View shows the full profile.</td></tr>
+<tr><td>Update</td><td>startEdit, handleStudentSubmit (when <code>editingId</code> has a value)</td><td>The form is filled with the old details. On save the old record is replaced. If the ID changed, <code>changeStudentIdEverywhere</code> updates the grades and payments.</td></tr>
+<tr><td>Delete</td><td>deleteStudent</td><td>Asks <code>confirm()</code>, then removes the student and also their grades and payments.</td></tr>
+</tbody></table>
+<pre>function deleteStudent(id) {
+  const student = getStudent(id);
+  if (student === null) {
+    return;
+  }
+  const sure = confirm(&quot;Delete &quot; + fullName(student) + &quot; (&quot; + id + &quot;)? Their grades and payments will also be deleted.&quot;);
+  if (!sure) {
+    return;
+  }
+  saveList(KEYS.students, loadList(KEYS.students).filter(function (item) {
+    return item.id !== id;
+  }));
+  saveList(KEYS.grades, loadList(KEYS.grades).filter(function (item) {
+    return item.studentId !== id;
+  }));
+  saveList(KEYS.payments, loadList(KEYS.payments).filter(function (item) {
+    return item.studentId !== id;
+  }));
+  if (editingId === id) {
+    resetStudentForm();
+  }
+  document.getElementById(&quot;studentProfile&quot;).hidden = true;
+  showMessage(document.getElementById(&quot;studentMessage&quot;), &quot;Student &quot; + id + &quot; was deleted.&quot;, &quot;success&quot;);
+  refreshAfterStudentChange();
+}</pre>
+<p><strong>Explain it:</strong> <code>filter</code> keeps every record whose ID is <em>not</em> the deleted one. It is done three times (students, grades, payments) so no orphan records are left behind.</p>
+<pre>function changeStudentIdEverywhere(oldId, newId) {
+  const grades = loadList(KEYS.grades);
+  for (const grade of grades) {
+    if (grade.studentId === oldId) {
+      grade.studentId = newId;
+    }
+  }
+  saveList(KEYS.grades, grades);
+
+  const payments = loadList(KEYS.payments);
+  for (const payment of payments) {
+    if (payment.studentId === oldId) {
+      payment.studentId = newId;
+    }
+  }
+  saveList(KEYS.payments, payments);
+}</pre>
+<h3>Validation and duplicate IDs</h3>
+<ul>
+<li>The ID must match <code>^KC\d{5}$</code>: &ldquo;KC&rdquo; and exactly five digits.</li>
+<li>Duplicate check: <code>students.some(student =&gt; student.id === id &amp;&amp; student.id !== editingId)</code>. The <em>and not editingId</em> part lets a student keep their own ID while editing.</li>
+<li>Names must be letters (2 to 40), the date of birth must give an age from 10 to 21, the phone must have 10 digits, the email is optional but must be valid if typed, and tuition must be a number that is 0 or more.</li>
+<li>All problems are collected in an array and shown together in a list, so the Administrator sees everything to fix at once.</li>
+<li>Missing data: if a list is empty the table shows a friendly row (&ldquo;No students match your search&rdquo;), and a blank mark is allowed and shown as &ldquo;-&rdquo;.</li>
+</ul>
+
+<h2>C7. Authentication (simulated)</h2>
+<pre>function loginUser(username, password) {
+  const users = loadList(KEYS.users);
+  for (const user of users) {
+    if (user.username === username &amp;&amp; user.password === password) {
+      const session = {
+        username: user.username,
+        role: user.role,
+        name: user.name,
+        teacherId: user.teacherId
+      };
+      sessionStorage.setItem(KEYS.session, JSON.stringify(session));
+      return user;
+    }
+  }
+  return null;
+}</pre>
+<pre>function requireRole(role) {
+  const session = getSession();
+  if (session === null) {
+    window.location.href = &quot;login.html?msg=login&quot;;
+    return null;
+  }
+  if (session.role !== role) {
+    window.location.href = &quot;login.html?msg=denied&quot;;
+    return null;
+  }
+  // The page starts hidden (class &quot;guard&quot;). Show it now that access is OK.
+  document.body.classList.remove(&quot;guard&quot;);
+  return session;
+}</pre>
+<p><strong>Explain it:</strong> <code>loginUser</code> compares the typed username and password with the saved accounts. On a match it saves a small <em>session</em> note (username, role, name) in sessionStorage. <code>login.js</code> then sends the person to <code>dashboardPageFor(role)</code>. At the top of every dashboard script, <code>requireRole</code> sends people away if there is no session or the role is wrong, and only then removes the <code>guard</code> class. <strong>Logout</strong> deletes the session note and returns to the login page.</p>
+<h3>Limits (very likely viva question)</h3>
+<ul>
+<li>Passwords are plain text in localStorage. Anyone can open DevTools &gt; Application and read them.</li>
+<li>The role check lives in the browser. A person could edit the stored session to say &ldquo;admin&rdquo;.</li>
+<li>No hashing, no lock-out, no HTTPS, no real session token or expiry.</li>
+<li><strong>Better design:</strong> send the password to a server over HTTPS, store only a salted hash, give the browser a token, and let the server decide what each role may see or change.</li>
+</ul>
+
+<h2>C8. Calculations (with worked examples)</h2>
+<h3>Grades</h3>
+<pre>function subjectAverage(record) {
+  if (record === null) {
+    return null;
+  }
+  const marks = [];
+  const values = [record.test1, record.test2, record.exam];
+  for (const value of values) {
+    if (value !== null &amp;&amp; value !== undefined &amp;&amp; value !== &quot;&quot;) {
+      marks.push(Number(value));
+    }
+  }
+  if (marks.length === 0) {
+    return null;
+  }
+  let total = 0;
+  for (const mark of marks) {
+    total += mark;
+  }
+  return Math.round((total / marks.length) * 10) / 10;
+}</pre>
+<pre>function letterGrade(average) {
+  if (average === null) {
+    return &quot;N/A&quot;;
+  }
+  if (average &gt;= 80) {
+    return &quot;A&quot;;
+  }
+  if (average &gt;= 70) {
+    return &quot;B&quot;;
+  }
+  if (average &gt;= 60) {
+    return &quot;C&quot;;
+  }
+  if (average &gt;= 50) {
+    return &quot;D&quot;;
+  }
+  if (average &gt;= 40) {
+    return &quot;E&quot;;
+  }
+  return &quot;F&quot;;
+}</pre>
+<pre>function parseScore(text) {
+  const clean = String(text).trim();
+  if (clean === &quot;&quot;) {
+    return { ok: true, value: null };
+  }
+  const number = Number(clean);
+  if (Number.isNaN(number) || number &lt; 0 || number &gt; 100) {
+    return { ok: false, value: null };
+  }
+  return { ok: true, value: number };
+}</pre>
+<table><thead><tr><th>Example</th><th>Working</th><th>Result</th></tr></thead><tbody>
+<tr><td>Test 1 = 54, Test 2 = 52, Exam = 52</td><td>(54 + 52 + 52) &divide; 3 = 52.666&hellip;, rounded to 1 decimal</td><td>52.7, letter D</td></tr>
+<tr><td>Test 1 = 90, Test 2 = 95, Exam left blank</td><td>Blank marks are skipped: (90 + 95) &divide; 2</td><td>92.5, letter A</td></tr>
+<tr><td>Student KC26005 overall (sample data)</td><td>Average of the seven subject averages: (52.7 + 71 + 89.3 + 58.3 + 73 + 92.5 + 59.7) &divide; 7 = 70.93</td><td>70.9, letter B</td></tr>
+<tr><td>Mark typed as &ldquo;150&rdquo; or &ldquo;abc&rdquo;</td><td><code>parseScore</code> returns <code>ok: false</code></td><td>Box turns red; the whole batch is not saved</td></tr>
+</tbody></table>
+<p>Letter scale: A 80&ndash;100, B 70&ndash;79, C 60&ndash;69, D 50&ndash;59, E 40&ndash;49, F below 40. Math.round(x * 10) / 10 is the trick for rounding to one decimal.</p>
+<h3>Tuition</h3>
+<pre>function getFinance(student) {
+  const payments = getPaymentsFor(student.id);
+  let paid = 0;
+  for (const payment of payments) {
+    paid += Number(payment.amount);
+  }
+  const due = Number(student.tuitionDue) || 0;
+  const balance = Math.max(Math.round((due - paid) * 100) / 100, 0);
+
+  let status = &quot;Pending&quot;;
+  if (balance &lt;= 0) {
+    status = &quot;Paid&quot;;
+  } else if (student.dueDate &amp;&amp; todayISO() &gt; student.dueDate) {
+    status = &quot;Outstanding&quot;;
+  }
+  return { due: due, paid: paid, balance: balance, status: status, payments: payments };
+}</pre>
+<table><thead><tr><th>Example (sample data)</th><th>Working</th><th>Status</th></tr></thead><tbody>
+<tr><td>KC26001: due J$90,000, paid J$90,000</td><td>balance = 0</td><td>Paid</td></tr>
+<tr><td>KC26002: due J$165,000, paid J$60,000, due date 2026-10-15</td><td>balance = 105,000; the due date has passed</td><td>Outstanding</td></tr>
+<tr><td>KC26008: due J$165,000, paid J$80,000, due date 2027-01-15</td><td>balance = 85,000; the due date is in the future</td><td>Pending</td></tr>
+</tbody></table>
+<p><strong>Explain it:</strong> add up all payments for the student, subtract from the tuition due (never below zero), then decide the status with <code>if / else if</code>. <code>Math.round(x * 100) / 100</code> avoids tiny decimal errors with money. Dates written as <code>YYYY-MM-DD</code> can be compared as text, so <code>todayISO() &gt; dueDate</code> works.</p>
+
+<h2>C9. Bloom&rsquo;s Taxonomy practice questions</h2>
+<table><thead><tr><th style="width:15%">Level</th><th style="width:38%">Possible question</th><th>Model answer (in your own words)</th></tr></thead><tbody>
+<tr><td>Remember</td><td>What is localStorage?</td><td>Browser storage that keeps text under keys and stays after the browser closes.</td></tr>
+<tr><td>Remember</td><td>Name the three user roles.</td><td>Administrator, Teacher and General Authorized User (viewer).</td></tr>
+<tr><td>Understand</td><td>Explain how a record is still there after a refresh.</td><td>It was saved with <code>saveList</code> as JSON text in localStorage. On the next load <code>loadList</code> reads and parses it again.</td></tr>
+<tr><td>Understand</td><td>What does <code>preventDefault()</code> do?</td><td>It stops the form from reloading the page so my JavaScript can check and save the data.</td></tr>
+<tr><td>Apply</td><td>How would you add a new subject, such as Biology?</td><td>Use Administrator &gt; Classes and subjects. The code checks name and code, pushes a new object into <code>knox_subjects</code>, saves, and redraws the table.</td></tr>
+<tr><td>Apply</td><td>Change the pass-grade scale so A starts at 85.</td><td>Edit <code>letterGrade</code> in shared.js and the scale text in the report card.</td></tr>
+<tr><td>Analyze</td><td>Why can the viewer not change records?</td><td>The viewer page has no edit forms or buttons, and <code>viewer.js</code> never calls a function that saves. (But a determined user could still use DevTools, which is why a real system checks on the server.)</td></tr>
+<tr><td>Analyze</td><td>What would go wrong if two students shared an ID?</td><td>Grades and payments are linked by ID, so one student&rsquo;s records would mix with another&rsquo;s. That is why duplicates are blocked.</td></tr>
+<tr><td>Analyze</td><td>Why delete a student&rsquo;s grades and payments too?</td><td>Otherwise orphan records stay in storage and could wrongly show in totals or reports.</td></tr>
+<tr><td>Evaluate</td><td>Is your login secure? Justify.</td><td>No. It is a simulation: plain-text passwords, role stored in the browser. It is fine for learning but a real school needs server-side checks.</td></tr>
+<tr><td>Evaluate</td><td>localStorage or a database: which is better here?</td><td>localStorage is enough for the assignment (no server, easy hosting). A real portal needs a database for security, sharing between users and larger data.</td></tr>
+<tr><td>Create</td><td>Design an attendance feature.</td><td>New key <code>knox_attendance</code> with {studentId, date, present}; a teacher form to mark the class; <code>loadList</code>/<code>saveList</code> to store it; a count of absences in the profile and the report card.</td></tr>
+</tbody></table>
+
+<h2>C10. &ldquo;Change the code&rdquo; practice (examiners sometimes ask)</h2>
+<table><thead><tr><th>Task</th><th>Where to look</th></tr></thead><tbody>
+<tr><td>Change the main colour</td><td>CSS file, <code>:root</code>, <code>--blue</code> and <code>--red</code></td></tr>
+<tr><td>Change the tuition status rules</td><td>shared.js, <code>getFinance</code></td></tr>
+<tr><td>Make the maximum mark 50 instead of 100</td><td>shared.js, <code>parseScore</code> (the <code>number &gt; 100</code> test) and the letter scale</td></tr>
+<tr><td>Show five announcements instead of three</td><td>public.js, <code>showAnnouncements</code>, <code>slice(0, 3)</code></td></tr>
+<tr><td>Add a new payment method</td><td>shared.js, the <code>PAYMENT_METHODS</code> array</td></tr>
+<tr><td>Add a new class</td><td>No code needed: Administrator &gt; Classes and subjects</td></tr>
+<tr><td>Change the sample login password</td><td>shared.js, <code>makeSampleUsers</code> (then Reset sample data)</td></tr>
+</tbody></table>
+
+<h2>C11. How to answer in the viva</h2>
+<ul>
+<li>Answer the question you were asked first, in one or two sentences, then add an example from your code.</li>
+<li>Name the file and function (&ldquo;in shared.js, the function getFinance&rdquo;). Examiners like specific answers.</li>
+<li>If you do not know, say what you do know and how you would find out (for example, check the lecture notes or MDN). Do not guess wildly.</li>
+<li>Be honest about limits. Saying &ldquo;this login is only a simulation and here is how a real one works&rdquo; scores better than defending it.</li>
+<li>Practise by opening a file, picking any function, and explaining it out loud in 30 seconds.</li>
+</ul>
+
+</body></html>

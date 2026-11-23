@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testing Checklist and Results</title><style>
+@page { size: A4; }
+* { box-sizing: border-box; }
+body { font-family: Arial, Helvetica, sans-serif; font-size: 10.3pt; line-height: 1.5; color: #14213d; margin: 0; }
+h1, h2, h3 { break-after: avoid; page-break-after: avoid; font-family: Georgia, 'Times New Roman', serif; color: #0f2e6b; line-height: 1.2; }
+h1 { font-size: 19pt; margin: 22pt 0 7pt; border-bottom: 2.5pt solid #b3202a; padding-bottom: 3pt; }
+h2 { font-size: 13.5pt; margin: 15pt 0 5pt; }
+h3 { font-size: 11.5pt; margin: 11pt 0 4pt; }
+p { margin: 0 0 7pt; }
+ul, ol { margin: 0 0 8pt; padding-left: 18pt; } li { margin-bottom: 2pt; }
+table { width: 100%; border-collapse: collapse; margin: 6pt 0 10pt; font-size: 9.2pt; page-break-inside: auto; }
+tr { page-break-inside: avoid; }
+th { background: #0f2e6b; color: #fff; text-align: left; padding: 4pt 6pt; }
+td { border: 0.5pt solid #c9d3e6; padding: 4pt 6pt; vertical-align: top; }
+tbody tr:nth-child(even) td { background: #f6f8fc; }
+code, pre { font-family: 'Courier New', monospace; }
+code { background: #eef2f9; padding: 0 2pt; font-size: 9pt; }
+pre { background: #f4f6fa; border: 0.5pt solid #c9d3e6; border-left: 3pt solid #0f2e6b; padding: 6pt 8pt; font-size: 7.6pt; line-height: 1.32; white-space: pre-wrap; word-wrap: break-word; page-break-inside: avoid; margin: 4pt 0 9pt; }
+.cover { height: 238mm; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; page-break-after: always; border-top: 8pt solid #b3202a; border-bottom: 8pt solid #0f2e6b; padding: 0 12mm; }
+.cover h1 { border: 0; font-size: 30pt; margin: 6pt 0; }
+.cover .small { font-size: 12pt; color: #55627f; }
+.cover table { width: 78%; margin-top: 18pt; font-size: 10.5pt; }
+.callout { border-left: 4pt solid #0f2e6b; background: #e6eefb; padding: 6pt 9pt; margin: 6pt 0 10pt; }
+.callout.warn { border-left-color: #b3202a; background: #fbe9ea; }
+.callout.ok { border-left-color: #17693d; background: #e3f4ea; }
+.placeholder { color: #b3202a; font-weight: bold; }
+.small { font-size: 8.6pt; color: #55627f; }
+.break { page-break-before: always; }
+.nobreak { page-break-inside: avoid; }
+.box { display: inline-block; width: 9pt; height: 9pt; border: 0.8pt solid #14213d; vertical-align: middle; }
+.noprint { background: #fff3cd; border: 1px solid #b3202a; padding: 10px 14px; margin: 10px; font-family: Arial, sans-serif; font-size: 11pt; }
+.noprint input { width: 100%; padding: 6px; margin: 4px 0 10px; font-size: 11pt; }
+.noprint button { padding: 8px 16px; font-size: 11pt; background: #0f2e6b; color: #fff; border: 0; cursor: pointer; }
+@media print { .noprint { display: none !important; } }
+svg text { font-family: Arial, Helvetica, sans-serif; }
+</style></head><body>
+<section class="cover"><div class="small">University of Technology, Jamaica | School of Computing and IT</div>
+<h1>Testing Checklist and Results</h1><div class="small">Knox College School Portal | tested 23 November 2026</div><table><tbody>
+<tr><td>Full name</td><td>Alistan Junior Byron</td></tr>
+<tr><td>Student ID</td><td>2509137</td></tr>
+<tr><td>University</td><td>University of Technology, Jamaica</td></tr>
+<tr><td>School</td><td>School of Computing and IT</td></tr>
+<tr><td>Programme</td><td>BSc Computing and Information Technology</td></tr>
+<tr><td>Course</td><td>CIT2011 &ndash; Web Programming</td></tr>
+<tr><td>Tutor</td><td>Miss Anuli</td></tr>
+<tr><td>Lab day and time</td><td>Monday, 3:00 PM &ndash; 5:00 PM</td></tr>
+<tr><td>Submission type</td><td>Individual project (approved by the tutor)</td></tr>
+</tbody></table></section>
+<h1 style="margin-top:0">1. What was tested automatically</h1>
+<p>While the portal was being built, scripts were written to test it. They were run on 23 November 2026 on the final files.</p>
+<table><thead><tr><th style="width:38%">Test</th><th style="width:20%">Result</th><th>What it covered</th></tr></thead><tbody>
+<tr><td>Simulated browser tests (4 scripts)</td><td>169 of 169 passed</td><td>Public pages, login and role guards, Administrator, Teacher and Viewer dashboards, student ID changes, calculations, validation helpers</td></tr>
+<tr><td>Google Chrome end-to-end test</td><td>29 of 29 passed</td><td>Real login redirects, role guard, student create, refresh keeps data, shared data between pages, logout, phone menu, every internal link</td></tr>
+<tr><td>Link and file check</td><td>No problems</td><td>Every <code>href</code> and <code>src</code> points to a file that exists; no duplicate ids; every id used by JavaScript exists on its page; tags are closed</td></tr>
+<tr><td>Layout check in Chrome</td><td>No problems</td><td>All 7 pages at a 360px phone width have no sideways scrolling; screenshots of the main pages were reviewed</td></tr>
+<tr><td>Console check in Chrome</td><td>No errors or warnings</td><td>Every page opened and the main features used</td></tr>
+</tbody></table>
+<div class="callout warn"><strong>Not tested:</strong> Firefox, Safari, Edge, real phones and tablets, a physical printer, and the hosted website (it has not been published yet). Please repeat the important checks below in your own browser. Tick each box when it works for you.</div>
+
+<h1 class="break" style="margin-top:0">2. Checklist (tick the last column yourself)</h1>
+<table><thead><tr><th style="width:4%">#</th><th style="width:12%">Area</th><th style="width:30%">What to do</th><th style="width:26%">Expected result</th><th style="width:20%">Tested by script?</th><th style="width:8%">I tested it</th></tr></thead><tbody><tr><td>1</td><td>Navigation</td><td>On every public page click Home, About Us, Contact Us and Login. Click the logo.</td><td>Each link opens the right page; the current page link is underlined in red.</td><td>Yes (all links opened in Chrome)</td><td><span class="box"></span></td></tr><tr><td>2</td><td>Navigation</td><td>Log in, then use My Dashboard and Log out in the menu.</td><td>My Dashboard opens your own dashboard. Log out returns to the login page.</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>3</td><td>Login</td><td>Log in with a wrong password. Then with empty boxes.</td><td>A clear message appears. No dashboard opens.</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>4</td><td>Login</td><td>Log in as admin, a teacher and viewer (see the sample accounts).</td><td>Each account opens its own dashboard.</td><td>Yes (4 accounts)</td><td><span class="box"></span></td></tr><tr><td>5</td><td>Logout</td><td>Press Log out, then use the browser Back button.</td><td>The dashboard is closed again (you are sent to the login page).</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>6</td><td>Role permissions</td><td>Log in as a teacher and open admin-dashboard.html by typing the address.</td><td>You are sent to the login page with a message about a different role.</td><td>Yes (all 6 wrong-role combinations)</td><td><span class="box"></span></td></tr><tr><td>7</td><td>Student registration</td><td>Administrator &gt; Students. Press Save student with an empty form.</td><td>A list of errors appears. Nothing is saved.</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>8</td><td>Duplicate ID</td><td>Register a student with the ID KC26001.</td><td>&ldquo;Student ID KC26001 is already used.&rdquo;</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>9</td><td>Registration success</td><td>Press Next ID, fill the form correctly, save.</td><td>Message &ldquo;was registered&rdquo;; the student appears in the table and the Overview count goes up.</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>10</td><td>Edit</td><td>Press Edit on a student, change the last name, Update student.</td><td>The table shows the new name. Another student&rsquo;s ID is refused.</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>11</td><td>ID change</td><td>Change a student&rsquo;s ID.</td><td>Their grades and payments follow the new ID.</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>12</td><td>Delete</td><td>Press Delete, Cancel the question, then Delete and press OK.</td><td>Cancel keeps the student. OK removes the student with their grades and payments.</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>13</td><td>Classes and subjects</td><td>Add a class and a subject; try duplicates; try deleting a class that has students.</td><td>Duplicates and deleting a used class are refused. Teacher can be changed in the table.</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>14</td><td>Grade entry (admin)</td><td>Grades: choose subject, class, semester, Load students; type 150 and abc; then valid marks.</td><td>Bad boxes turn red and saving is blocked. Valid marks save.</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>15</td><td>Teacher steps</td><td>Log in as mr.brown. Choose subject, class, semester.</td><td>Step 2 and 3 unlock one by one; Load students is locked until all three are chosen. Only Mathematics is offered.</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>16</td><td>Batch grades</td><td>Fill marks for every row, put one invalid mark, Save all marks; fix it; save again.</td><td>One bad mark blocks the whole batch. After fixing, all rows save together.</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>17</td><td>Student filter</td><td>Type a name in Find a student; tick Only students with a missing mark.</td><td>Rows hide and show without losing typed marks.</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>18</td><td>Report card</td><td>Report cards: choose class, student, semester, Generate; compare with the marks.</td><td>Subject averages, overall average, grade, remark and signature lines are correct.</td><td>Yes (compared with an independent calculation)</td><td><span class="box"></span></td></tr><tr><td>19</td><td>Printing</td><td>Press Print report card and look at the print preview.</td><td>Only the report card prints (menu and footer hidden).</td><td>Partly (a PDF print was generated in Chrome)</td><td><span class="box"></span></td></tr><tr><td>20</td><td>Tuition calculations</td><td>Administrator &gt; Tuition and payments. Check KC26002 (paid J$60,000 of J$165,000).</td><td>Balance J$105,000.00; status Outstanding.</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>21</td><td>Payments</td><td>Record a payment bigger than the balance; then a future date; then a valid one.</td><td>The first two are refused. A valid payment updates balance and status, and the row flashes.</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>22</td><td>Paid status</td><td>Pay the remaining balance for one student.</td><td>Status changes to Paid; Overview totals update.</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>23</td><td>Search and filter</td><td>Use the search boxes and filters on Students, Ledger and the Viewer dashboard.</td><td>Rows match what you typed or chose; empty results show a friendly message.</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>24</td><td>Read-only access</td><td>Log in as viewer and look for edit, delete or save buttons.</td><td>None exist. Profiles and reports can be viewed only.</td><td>Yes (and the viewer script has no save code)</td><td><span class="box"></span></td></tr><tr><td>25</td><td>Reports</td><td>Viewer &gt; Reports: change class and semester.</td><td>Numbers, bar charts and table update.</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>26</td><td>Browser storage</td><td>Add a student, refresh the page, open another page.</td><td>The student is still there and other pages show it.</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>27</td><td>Contact form</td><td>Send the form empty, with a bad email, a bad phone, then correct.</td><td>Browser rules and messages stop bad input; a valid message is saved and shows in Administrator &gt; Messages.</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>28</td><td>Form validation</td><td>Try bad names, bad phone, a date of birth that gives age under 10.</td><td>Each problem is listed in the error box.</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>29</td><td>Missing data</td><td>Open a student with a blank exam mark; filter to a semester with no students.</td><td>Blank marks show as &ldquo;-&rdquo;; empty tables show a message.</td><td>Yes</td><td><span class="box"></span></td></tr><tr><td>30</td><td>Mobile layout</td><td>Make the browser window narrow (about 360px) or open on a phone; press Menu.</td><td>No sideways scrolling; the Menu button opens the links; tables scroll inside their box.</td><td>Yes (7 pages at 360px in Chrome)</td><td><span class="box"></span></td></tr><tr><td>31</td><td>Broken links</td><td>Click every link and look at every picture.</td><td>No missing pages or pictures.</td><td>Yes (every link and file reference checked)</td><td><span class="box"></span></td></tr><tr><td>32</td><td>Console errors</td><td>Press F12, open Console, visit every page and use each feature.</td><td>No red errors or yellow warnings.</td><td>Yes (none in Chrome)</td><td><span class="box"></span></td></tr></tbody></table>
+
+<h1>3. Problems found and fixed during testing and review</h1>
+<table><thead><tr><th>Problem found</th><th>Fix</th></tr></thead><tbody>
+<tr><td>Large money amounts overflowed their cards on the Overview page</td><td>Smaller number size, wider cards, and the extra card removed</td></tr>
+<tr><td>Hero text was a little out of line with the headings</td><td>Corrected the padding rule</td></tr>
+<tr><td>The home page said &ldquo;Third form to sixth form&rdquo; for Grades 7&ndash;13</td><td>Changed to &ldquo;First form to sixth form&rdquo; (Grade 7 is first form)</td></tr>
+<tr><td>Student, tuition and report tables wrapped names and dates onto several lines</td><td>Added a no-wrap table style so those tables scroll sideways inside their box when needed</td></tr>
+</tbody></table>
+<h2>Your test notes</h2>
+<table><thead><tr><th style="width:22%">Browser / device</th><th style="width:16%">Date</th><th>Problems or notes</th></tr></thead><tbody>
+<tr><td>&nbsp;</td><td></td><td></td></tr><tr><td>&nbsp;</td><td></td><td></td></tr><tr><td>&nbsp;</td><td></td><td></td></tr>
+</tbody></table>
+
+</body></html>

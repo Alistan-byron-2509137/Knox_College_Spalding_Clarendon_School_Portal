@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--
+  Student:   Alistan Junior Byron
+  Student ID: 2509137
+  Programme: BSc Computing and Information Technology
+  Course:    CIT2011 - Web Programming
+  Tutor:     Miss Anuli
+  Lab:       Monday, 3:00 PM - 5:00 PM
+  Project:   Individual School Portal Assignment
+             (Knox College, Spalding, Clarendon, Jamaica)
+  FILE: viewer-dashboard.html
+  PURPOSE: General authorized user dashboard. Read-only student search, profiles, academic records, financial statements and reports.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Read-only viewer dashboard for the Knox College School Portal.">
+  <title>Viewer Dashboard | Knox College School Portal</title>
+  <link rel="icon" href="Assets/KnoxCollege_Spalding_Clarendon_logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="CSS/KnoxCollege_Spalding_Clarendon_styles.css">
+</head>
+<body class="guard">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header no-print">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="Assets/KnoxCollege_Spalding_Clarendon_logo.svg" alt="Knox College portal emblem" width="44" height="51">
+        <span class="brand-name">Knox College
+          <span class="brand-sub">Spalding, Clarendon, Jamaica</span>
+        </span>
+      </a>
+      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="dashboard">
+      <aside class="sidebar no-print" aria-label="Viewer menu">
+        <h2>Viewer</h2>
+        <p id="welcomeText">Signed in</p>
+        <button type="button" data-section="search">Student search</button>
+        <button type="button" data-section="reports">Reports</button>
+      </aside>
+
+      <div class="content">
+        <p class="message no-print">Read-only access: you can search and view records, but you cannot add, change or delete anything.</p>
+
+        <!-- ===== SEARCH ===== -->
+        <section class="panel-section" id="section-search" aria-labelledby="search-heading">
+          <div class="panel-heading"><h1 id="search-heading">Student search</h1></div>
+          <div class="toolbar">
+            <div class="field"><label for="vSearch">Name or student ID</label><input type="search" id="vSearch"></div>
+            <div class="field"><label for="vClass">Class</label><select id="vClass"></select></div>
+            <div class="field"><label for="vSemester">Semester</label><select id="vSemester"></select></div>
+            <div class="field"><label for="vStatus">Fee status</label>
+              <select id="vStatus"><option value="">All statuses</option><option>Paid</option><option>Pending</option><option>Outstanding</option></select></div>
+          </div>
+          <p id="vCount" class="muted"></p>
+          <div class="table-wrap">
+            <table class="nowrap">
+              <caption>Matching students</caption>
+              <thead>
+                <tr><th scope="col">ID</th><th scope="col">Name</th><th scope="col">Class</th><th scope="col">Semester</th><th scope="col">Overall average</th><th scope="col">Fee status</th><th scope="col">Profile</th></tr>
+              </thead>
+              <tbody id="vTable"></tbody>
+            </table>
+          </div>
+          <div class="form-card" id="vProfile" hidden></div>
+        </section>
+
+        <!-- ===== REPORTS ===== -->
+        <section class="panel-section" id="section-reports" aria-labelledby="vreports-heading" hidden>
+          <div class="panel-heading"><h1 id="vreports-heading">Reports</h1></div>
+          <div class="toolbar no-print">
+            <div class="field"><label for="rpClass">Class</label><select id="rpClass"></select></div>
+            <div class="field"><label for="rpSemester">Semester</label><select id="rpSemester"></select></div>
+            <div class="field"><button class="btn btn-light" type="button" id="rpPrint">Print this report</button></div>
+          </div>
+          <div class="stat-cards">
+            <div class="stat-card"><span class="stat-number" id="rpStudents">0</span><span class="stat-label">Students in report</span></div>
+            <div class="stat-card"><span class="stat-number" id="rpAverage">-</span><span class="stat-label">Average mark</span></div>
+            <div class="stat-card stat-green"><span class="stat-number" id="rpCollected">J$0.00</span><span class="stat-label">Tuition collected</span></div>
+            <div class="stat-card stat-red"><span class="stat-number" id="rpBalance">J$0.00</span><span class="stat-label">Balance owed</span></div>
+          </div>
+          <div class="two-column">
+            <div class="form-card">
+              <h3>Average mark by subject</h3>
+              <div id="subjectBars"></div>
+            </div>
+            <div class="form-card">
+              <h3>Students by fee status</h3>
+              <div id="statusBars"></div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="nowrap">
+              <caption>Class report</caption>
+              <thead>
+                <tr><th scope="col">Student</th><th scope="col">Class</th><th scope="col">Overall average</th><th scope="col">Grade</th><th scope="col">Balance</th><th scope="col">Fee status</th></tr>
+              </thead>
+              <tbody id="rpTable"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer no-print">
+    <div class="container">
+      <p><strong>Knox College School Portal</strong> &ndash; a student project for CIT2011 Web Programming, University of Technology, Jamaica.</p>
+      <p>Developed by Alistan Junior Byron (2509137), BSc Computing and Information Technology. This is not the official school website.</p>
+      <p>School facts come from public sources. The student, grade and payment records are fictional sample data.</p>
+      <p><a href="index.html">Home</a> | <a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a> | <a href="login.html">Login</a></p>
+    </div>
+  </footer>
+  <script defer src="JavaScript/KnoxCollege_Spalding_Clarendon_shared.js"></script>
+  <script defer src="JavaScript/KnoxCollege_Spalding_Clarendon_viewer.js"></script>
+</body>
+</html>

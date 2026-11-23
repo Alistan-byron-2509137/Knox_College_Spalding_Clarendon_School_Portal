@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--
+  Student:   Alistan Junior Byron
+  Student ID: 2509137
+  Programme: BSc Computing and Information Technology
+  Course:    CIT2011 - Web Programming
+  Tutor:     Miss Anuli
+  Lab:       Monday, 3:00 PM - 5:00 PM
+  Project:   Individual School Portal Assignment
+             (Knox College, Spalding, Clarendon, Jamaica)
+  FILE: teacher-dashboard.html
+  PURPOSE: Teacher dashboard. Subject, class and semester steps, batch grade entry with validation, and printable report cards.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Teacher dashboard for the Knox College School Portal.">
+  <title>Teacher Dashboard | Knox College School Portal</title>
+  <link rel="icon" href="Assets/KnoxCollege_Spalding_Clarendon_logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="CSS/KnoxCollege_Spalding_Clarendon_styles.css">
+</head>
+<body class="guard">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header no-print">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="Assets/KnoxCollege_Spalding_Clarendon_logo.svg" alt="Knox College portal emblem" width="44" height="51">
+        <span class="brand-name">Knox College
+          <span class="brand-sub">Spalding, Clarendon, Jamaica</span>
+        </span>
+      </a>
+      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="dashboard">
+      <aside class="sidebar no-print" aria-label="Teacher menu">
+        <h2>Teacher</h2>
+        <p id="welcomeText">Signed in</p>
+        <button type="button" data-section="enter">Enter grades</button>
+        <button type="button" data-section="reports">Report cards</button>
+      </aside>
+
+      <div class="content">
+
+        <!-- ===== GRADE ENTRY ===== -->
+        <section class="panel-section no-print" id="section-enter" aria-labelledby="enter-heading">
+          <div class="panel-heading"><h1 id="enter-heading">Enter grades</h1></div>
+          <p>Work through the three steps, then load your students. Marks are out of 100. Leave a box empty if there is no mark yet.</p>
+          <div id="teacherMessage" hidden></div>
+
+          <div class="steps">
+            <fieldset>
+              <legend>Step 1: Subject</legend>
+              <label for="tSubject">Subject you teach</label>
+              <select id="tSubject"></select>
+            </fieldset>
+            <fieldset id="step2" disabled>
+              <legend>Step 2: Class</legend>
+              <label for="tClass">Class</label>
+              <select id="tClass"></select>
+            </fieldset>
+            <fieldset id="step3" disabled>
+              <legend>Step 3: Semester</legend>
+              <label for="tSemester">Semester</label>
+              <select id="tSemester"></select>
+            </fieldset>
+          </div>
+          <div class="button-row">
+            <button class="btn" type="button" id="tLoad" disabled>Load students</button>
+          </div>
+
+          <div id="gradeArea" hidden>
+            <h2 id="gradeTitle">Marks</h2>
+            <div class="toolbar">
+              <div class="field"><label for="tSearch">Find a student</label><input type="search" id="tSearch" placeholder="Name or ID"></div>
+              <div class="field"><label class="inline-field" for="tMissing"><input type="checkbox" id="tMissing"> Only students with a missing mark</label></div>
+            </div>
+            <p id="tCount" class="muted"></p>
+            <div class="table-wrap">
+              <table>
+                <caption>Marks for the chosen class</caption>
+                <thead>
+                  <tr><th scope="col">ID</th><th scope="col">Student</th><th scope="col">Test 1</th><th scope="col">Test 2</th><th scope="col">Exam</th><th scope="col">Average</th><th scope="col">Grade</th></tr>
+                </thead>
+                <tbody id="tGradeTable"></tbody>
+              </table>
+            </div>
+            <div class="button-row">
+              <button class="btn btn-red" type="button" id="tSave">Save all marks</button>
+            </div>
+            <p id="tClassAverage" class="muted"></p>
+          </div>
+        </section>
+
+        <!-- ===== REPORT CARDS ===== -->
+        <section class="panel-section" id="section-reports" aria-labelledby="reports-heading" hidden>
+          <div class="no-print">
+            <div class="panel-heading"><h1 id="reports-heading">Report cards</h1></div>
+            <p>Choose a class, student and semester. The averages are worked out automatically from the saved marks.</p>
+            <div id="reportMessage" hidden></div>
+            <div class="toolbar">
+              <div class="field"><label for="rClass">Class</label><select id="rClass"></select></div>
+              <div class="field"><label for="rStudent">Student</label><select id="rStudent"></select></div>
+              <div class="field"><label for="rSemester">Semester</label><select id="rSemester"></select></div>
+              <div class="field"><button class="btn" type="button" id="rGenerate">Generate report card</button></div>
+            </div>
+          </div>
+          <div id="reportArea" hidden>
+            <div class="button-row no-print">
+              <button class="btn btn-red" type="button" id="rPrint">Print report card</button>
+            </div>
+            <p></p>
+            <article class="report-card" id="reportCard"></article>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer no-print">
+    <div class="container">
+      <p><strong>Knox College School Portal</strong> &ndash; a student project for CIT2011 Web Programming, University of Technology, Jamaica.</p>
+      <p>Developed by Alistan Junior Byron (2509137), BSc Computing and Information Technology. This is not the official school website.</p>
+      <p>School facts come from public sources. The student, grade and payment records are fictional sample data.</p>
+      <p><a href="index.html">Home</a> | <a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a> | <a href="login.html">Login</a></p>
+    </div>
+  </footer>
+  <script defer src="JavaScript/KnoxCollege_Spalding_Clarendon_shared.js"></script>
+  <script defer src="JavaScript/KnoxCollege_Spalding_Clarendon_teacher.js"></script>
+</body>
+</html>

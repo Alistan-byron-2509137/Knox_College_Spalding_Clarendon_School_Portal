@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+  Student:   Alistan Junior Byron
+  Student ID: 2509137
+  Programme: BSc Computing and Information Technology
+  Course:    CIT2011 - Web Programming
+  Tutor:     Miss Anuli
+  Lab:       Monday, 3:00 PM - 5:00 PM
+  Project:   Individual School Portal Assignment
+             (Knox College, Spalding, Clarendon, Jamaica)
+  FILE: index.html
+  PURPOSE: Home page. Shows school facts, the latest announcements (read from localStorage) and links to the three dashboards.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="School portal for Knox College, Spalding, Clarendon, Jamaica (student project).">
+  <title>Knox College School Portal | Home</title>
+  <link rel="icon" href="Assets/KnoxCollege_Spalding_Clarendon_logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="CSS/KnoxCollege_Spalding_Clarendon_styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header no-print">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="Assets/KnoxCollege_Spalding_Clarendon_logo.svg" alt="Knox College portal emblem" width="44" height="51">
+        <span class="brand-name">Knox College
+          <span class="brand-sub">Spalding, Clarendon, Jamaica</span>
+        </span>
+      </a>
+      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-content">
+        <h1>Knox College</h1>
+        <p class="motto">Niti Servire Neque Cedere</p>
+        <p class="motto-meaning">To strive to serve and not to yield. Spalding, Clarendon, Jamaica.</p>
+        <div class="button-row">
+          <a class="btn btn-red" href="login.html">Log in to the portal</a>
+          <a class="btn btn-light" href="about.html">About the school</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="facts-heading">
+      <div class="container">
+        <h2 id="facts-heading">Knox College at a glance</h2>
+        <div class="fact-grid">
+          <div class="fact"><strong>1947</strong>Year the school opened</div>
+          <div class="fact"><strong>Grades 7&ndash;13</strong>First form to sixth form</div>
+          <div class="fact"><strong>100 acres</strong>Hilltop campus in Spalding</div>
+          <div class="fact"><strong>Day and boarding</strong>Co-educational school</div>
+        </div>
+        <p class="source-note">Facts are taken from public sources. See the About Us page for details.</p>
+      </div>
+    </section>
+
+    <section class="section section-white" aria-labelledby="notice-heading">
+      <div class="container">
+        <h2 id="notice-heading">Latest announcements</h2>
+        <ul class="notice-list" id="announcementList">
+          <li>Loading announcements&hellip;</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="portal-heading">
+      <div class="container">
+        <h2 id="portal-heading">Choose your portal</h2>
+        <p>Each role has its own dashboard. Log in with a sample account to try them.</p>
+        <div class="card-grid">
+          <article class="card card-accent role-card">
+            <h3>Administrator</h3>
+            <p>Register students, manage subjects and classes, record tuition payments and post announcements.</p>
+            <a class="btn" href="login.html">Administrator login</a>
+          </article>
+          <article class="card card-accent role-card">
+            <h3>Teacher</h3>
+            <p>Choose a subject and class, enter marks for the whole class at once, and print report cards.</p>
+            <a class="btn" href="login.html">Teacher login</a>
+          </article>
+          <article class="card card-accent role-card">
+            <h3>General authorized user</h3>
+            <p>Search student profiles, view academic records and financial statements. Read-only access.</p>
+            <a class="btn" href="login.html">Viewer login</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer no-print">
+    <div class="container">
+      <p><strong>Knox College School Portal</strong> &ndash; a student project for CIT2011 Web Programming, University of Technology, Jamaica.</p>
+      <p>Developed by Alistan Junior Byron (2509137), BSc Computing and Information Technology. This is not the official school website.</p>
+      <p>School facts come from public sources. The student, grade and payment records are fictional sample data.</p>
+      <p><a href="index.html">Home</a> | <a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a> | <a href="login.html">Login</a></p>
+    </div>
+  </footer>
+  <script defer src="JavaScript/KnoxCollege_Spalding_Clarendon_shared.js"></script>
+  <script defer src="JavaScript/KnoxCollege_Spalding_Clarendon_public.js"></script>
+</body>
+</html>

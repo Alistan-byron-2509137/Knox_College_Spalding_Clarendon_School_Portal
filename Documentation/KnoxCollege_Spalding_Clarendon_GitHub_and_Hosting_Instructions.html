@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub and Hosting Instructions</title><style>
+@page { size: A4; }
+* { box-sizing: border-box; }
+body { font-family: Arial, Helvetica, sans-serif; font-size: 10.3pt; line-height: 1.5; color: #14213d; margin: 0; }
+h1, h2, h3 { break-after: avoid; page-break-after: avoid; font-family: Georgia, 'Times New Roman', serif; color: #0f2e6b; line-height: 1.2; }
+h1 { font-size: 19pt; margin: 22pt 0 7pt; border-bottom: 2.5pt solid #b3202a; padding-bottom: 3pt; }
+h2 { font-size: 13.5pt; margin: 15pt 0 5pt; }
+h3 { font-size: 11.5pt; margin: 11pt 0 4pt; }
+p { margin: 0 0 7pt; }
+ul, ol { margin: 0 0 8pt; padding-left: 18pt; } li { margin-bottom: 2pt; }
+table { width: 100%; border-collapse: collapse; margin: 6pt 0 10pt; font-size: 9.2pt; page-break-inside: auto; }
+tr { page-break-inside: avoid; }
+th { background: #0f2e6b; color: #fff; text-align: left; padding: 4pt 6pt; }
+td { border: 0.5pt solid #c9d3e6; padding: 4pt 6pt; vertical-align: top; }
+tbody tr:nth-child(even) td { background: #f6f8fc; }
+code, pre { font-family: 'Courier New', monospace; }
+code { background: #eef2f9; padding: 0 2pt; font-size: 9pt; }
+pre { background: #f4f6fa; border: 0.5pt solid #c9d3e6; border-left: 3pt solid #0f2e6b; padding: 6pt 8pt; font-size: 7.6pt; line-height: 1.32; white-space: pre-wrap; word-wrap: break-word; page-break-inside: avoid; margin: 4pt 0 9pt; }
+.cover { height: 238mm; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; page-break-after: always; border-top: 8pt solid #b3202a; border-bottom: 8pt solid #0f2e6b; padding: 0 12mm; }
+.cover h1 { border: 0; font-size: 30pt; margin: 6pt 0; }
+.cover .small { font-size: 12pt; color: #55627f; }
+.cover table { width: 78%; margin-top: 18pt; font-size: 10.5pt; }
+.callout { border-left: 4pt solid #0f2e6b; background: #e6eefb; padding: 6pt 9pt; margin: 6pt 0 10pt; }
+.callout.warn { border-left-color: #b3202a; background: #fbe9ea; }
+.callout.ok { border-left-color: #17693d; background: #e3f4ea; }
+.placeholder { color: #b3202a; font-weight: bold; }
+.small { font-size: 8.6pt; color: #55627f; }
+.break { page-break-before: always; }
+.nobreak { page-break-inside: avoid; }
+.box { display: inline-block; width: 9pt; height: 9pt; border: 0.8pt solid #14213d; vertical-align: middle; }
+.noprint { background: #fff3cd; border: 1px solid #b3202a; padding: 10px 14px; margin: 10px; font-family: Arial, sans-serif; font-size: 11pt; }
+.noprint input { width: 100%; padding: 6px; margin: 4px 0 10px; font-size: 11pt; }
+.noprint button { padding: 8px 16px; font-size: 11pt; background: #0f2e6b; color: #fff; border: 0; cursor: pointer; }
+@media print { .noprint { display: none !important; } }
+svg text { font-family: Arial, Helvetica, sans-serif; }
+</style></head><body>
+
+<h1 style="margin-top:0">GitHub and free hosting instructions</h1>
+<div class="callout warn"><strong>Status:</strong> nothing in this guide has been done yet. No repository was created and the site is not hosted. The links in your report are placeholders until you complete these steps yourself.</div>
+<p>The assignment needs a <strong>GitHub repository link</strong> and a <strong>free hosting link</strong> in your report PDF. A computer is easiest for these steps. Menu names on GitHub change from time to time, so follow the on-screen wording if it differs slightly.</p>
+
+<h2>Before you begin</h2>
+<ul>
+<li>Unzip the project ZIP. You should see one folder named <code>Knox_College_Spalding_Clarendon_School_Portal</code> containing <code>index.html</code>, the other pages, and the folders <code>CSS</code>, <code>JavaScript</code>, <code>Assets</code>, <code>Documentation</code>, plus <code>README.md</code>.</li>
+<li><strong>Do not rename any file.</strong> Web addresses are case-sensitive on GitHub Pages, and every link in the project uses the exact file names.</li>
+<li><code>index.html</code> must sit at the <em>top</em> of the repository, not inside another folder.</li>
+</ul>
+
+<h2>Part 1. Create the GitHub repository</h2>
+<ol>
+<li>Go to <code>github.com</code> and sign up (or sign in).</li>
+<li>Click <strong>New</strong> (or the <strong>+</strong> menu &gt; <strong>New repository</strong>).</li>
+<li>Repository name: <code>knox-college-spalding-clarendon-school-portal</code> (or any name you like, with no spaces).</li>
+<li>Choose <strong>Public</strong>. Leave &ldquo;Add a README&rdquo; <strong>unticked</strong> (the project already has one). Click <strong>Create repository</strong>.</li>
+</ol>
+
+<h2>Part 2. Upload your files</h2>
+<h3>Option A: upload in the browser (no extra software)</h3>
+<ol>
+<li>On the new empty repository page, click <strong>uploading an existing file</strong>.</li>
+<li>Open the unzipped folder on your computer, select <strong>everything inside it</strong> (index.html, the other .html files, README.md and the CSS, JavaScript, Assets and Documentation folders) and drag it into the GitHub page. Do not drag the outer folder itself.</li>
+<li>Wait for the upload to finish, write a short message such as &ldquo;Add Knox College School Portal&rdquo;, and click <strong>Commit changes</strong>.</li>
+<li>Check the repository page: <code>index.html</code> and the four folders must be visible at the top level.</li>
+</ol>
+<h3>Option B: Git commands (if Git is installed)</h3>
+<pre>cd Knox_College_Spalding_Clarendon_School_Portal
+git init
+git add .
+git commit -m "Add Knox College School Portal"
+git branch -M main
+git remote add origin https://github.com/YOUR-USERNAME/knox-college-spalding-clarendon-school-portal.git
+git push -u origin main</pre>
+<p>Replace <code>YOUR-USERNAME</code> with your GitHub username. GitHub may ask you to sign in or use a personal access token.</p>
+<p><strong>Your repository link</strong> is the address in the browser bar: <code>https://github.com/YOUR-USERNAME/knox-college-spalding-clarendon-school-portal</code></p>
+
+<h2>Part 3. Publish with GitHub Pages (free hosting)</h2>
+<ol>
+<li>In your repository click <strong>Settings</strong>, then <strong>Pages</strong> in the left menu.</li>
+<li>Under <strong>Build and deployment</strong>, set <strong>Source</strong> to <strong>Deploy from a branch</strong>.</li>
+<li>Set <strong>Branch</strong> to <code>main</code> and the folder to <code>/ (root)</code>. Click <strong>Save</strong>.</li>
+<li>Wait one to two minutes and refresh the Pages screen. A line appears: <em>Your site is live at&hellip;</em> The address looks like <code>https://YOUR-USERNAME.github.io/knox-college-spalding-clarendon-school-portal/</code></li>
+<li>That address is your <strong>free hosting link</strong>.</li>
+</ol>
+
+<h2>Part 4. Check the live site</h2>
+<table><thead><tr><th>Check</th><th>Done</th></tr></thead><tbody>
+<tr><td>The home page opens with the styling and the banner picture</td><td><span class="box"></span></td></tr>
+<tr><td>All menu links work (Home, About Us, Contact Us, Login)</td><td><span class="box"></span></td></tr>
+<tr><td>You can log in as admin, mr.brown and viewer, and each opens its own dashboard</td><td><span class="box"></span></td></tr>
+<tr><td>F12 &gt; Console shows no errors</td><td><span class="box"></span></td></tr>
+<tr><td>You added a student, refreshed, and it stayed</td><td><span class="box"></span></td></tr>
+<tr><td>You tested on your phone using the live link</td><td><span class="box"></span></td></tr>
+</tbody></table>
+<div class="callout">The data lives in each visitor&rsquo;s own browser. Your changes on your computer will not appear on someone else&rsquo;s device. Everyone starts with the same sample data.</div>
+
+<h2>Part 5. Put the links in your report</h2>
+<ol>
+<li>Open <code>Documentation/KnoxCollege_Spalding_Clarendon_Project_Report.html</code> in Google Chrome.</li>
+<li>Paste your GitHub link and your hosting link into the yellow box at the top.</li>
+<li>Press <strong>Print / Save as PDF</strong> and choose <strong>Save as PDF</strong>. Save it in the <code>Documentation</code> folder. The two links in Section 8 are now clickable in the PDF.</li>
+<li>Check that the PDF shows your real links and no red placeholders.</li>
+<li>Submit the ZIP and the PDF as your tutor asks.</li>
+</ol>
+
+<h2>Other free hosting you could use</h2>
+<ul>
+<li><strong>Netlify Drop:</strong> sign in, then drag the project folder onto the drop area on <code>app.netlify.com/drop</code>. Netlify gives you a link.</li>
+<li><strong>Cloudflare Pages</strong> or <strong>Vercel</strong> can also host a static site from a GitHub repository for free.</li>
+</ul>
+
+<h2>Common problems</h2>
+<table><thead><tr><th style="width:36%">Problem</th><th>Likely cause and fix</th></tr></thead><tbody>
+<tr><td>404 &ldquo;There isn&rsquo;t a GitHub Pages site here&rdquo;</td><td>Pages is not switched on yet, or <code>index.html</code> is inside an extra folder. Move the files to the top level and wait two minutes.</td></tr>
+<tr><td>The page has no colours or pictures</td><td>The <code>CSS</code> or <code>Assets</code> folder was not uploaded, or a file was renamed.</td></tr>
+<tr><td>A dashboard is blank or sends you to Login</td><td>You are not logged in, or this is a new tab. Log in again.</td></tr>
+<tr><td>Strange or missing data</td><td>Log in as admin and press <strong>Reset sample data</strong> on the Overview page.</td></tr>
+<tr><td>Changes you pushed do not show</td><td>Wait a minute and refresh with Ctrl+F5.</td></tr>
+</tbody></table>
+
+</body></html>
